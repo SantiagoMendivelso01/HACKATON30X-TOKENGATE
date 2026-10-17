@@ -6,7 +6,7 @@ import { classifyCall, classifyReply } from "./funnel";
 import { computeMetrics, matureEvidence, prorateFixed, type LeadOutcomeRow } from "./metrics";
 import { channelShares, extractNumbers, templateRecommendation, verifyNumbers } from "./recommendation";
 import { sampleBeta, seededRng, wilson } from "./stats";
-import { applyFloor, thompson, uniformMix, type ArmEvidence } from "./thompson";
+import { applyFloor, nextWavePlan, thompson, uniformMix, type ArmEvidence } from "./thompson";
 
 describe("estadística", () => {
   it("Wilson al 90%", () => {
@@ -64,6 +64,14 @@ describe("Thompson", () => {
   it("no apaga con pocos contactos aunque P(mejor) sea baja", () => {
     const arms = ALL_ARMS.map((a, i) => ev(a, i === 0 ? { matureContacts: 12, conversations: 0, rejections: 6 } : {}));
     expect(thompson(arms, DEFAULT_WEIGHTS, DEFAULT_THRESHOLDS, seededRng(3)).turnedOff).toEqual([]);
+  });
+
+  it("D46: sin contactos maduros la próxima oleada es uniforme y no hay líder", () => {
+    const arms = ALL_ARMS.map((a) => ev(a, { matureContacts: 0, conversations: 0, qualified: 0, rejections: 0, costUsd: 0 }));
+    const r = nextWavePlan(arms, DEFAULT_WEIGHTS, DEFAULT_THRESHOLDS, seededRng(1));
+    expect(r.leader).toBeNull();
+    expect(Object.values(r.mix).every((v) => Math.abs(v - 1 / 6) < 1e-9)).toBe(true);
+    expect(r.evidence).toBe("insufficient");
   });
 
   it("applyFloor respeta el mínimo y suma 1", () => {

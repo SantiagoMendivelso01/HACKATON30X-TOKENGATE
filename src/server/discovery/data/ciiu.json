@@ -1,0 +1,3254 @@
+{
+ "generatedAt": "2026-10-17",
+ "sources": [
+  "https://www.datos.gov.co/resource/3kkb-6c2s",
+  "https://www.datos.gov.co/resource/c82u-588k"
+ ],
+ "ciiu": [
+  {
+   "code": "0010",
+   "label": null,
+   "activeCompanies": 10
+  },
+  {
+   "code": "0020",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "0081",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "0082",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "0090",
+   "label": null,
+   "activeCompanies": 18
+  },
+  {
+   "code": "0100",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "0111",
+   "label": "Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas",
+   "activeCompanies": 899
+  },
+  {
+   "code": "0112",
+   "label": "Cultivo de arroz",
+   "activeCompanies": 810
+  },
+  {
+   "code": "0113",
+   "label": "Cultivo de hortalizas, raices y tuberculos",
+   "activeCompanies": 2171
+  },
+  {
+   "code": "0114",
+   "label": null,
+   "activeCompanies": 29
+  },
+  {
+   "code": "0115",
+   "label": null,
+   "activeCompanies": 98
+  },
+  {
+   "code": "0119",
+   "label": "Otros cultivos transitorios n.c.p.",
+   "activeCompanies": 778
+  },
+  {
+   "code": "0121",
+   "label": "Cultivo de frutas tropicales y subtropicales",
+   "activeCompanies": 3450
+  },
+  {
+   "code": "0122",
+   "label": "Cultivo de platano y banano",
+   "activeCompanies": 992
+  },
+  {
+   "code": "0123",
+   "label": "Cultivo de cafe",
+   "activeCompanies": 1823
+  },
+  {
+   "code": "0124",
+   "label": null,
+   "activeCompanies": 1177
+  },
+  {
+   "code": "0125",
+   "label": null,
+   "activeCompanies": 1684
+  },
+  {
+   "code": "0126",
+   "label": "Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos",
+   "activeCompanies": 2189
+  },
+  {
+   "code": "0127",
+   "label": null,
+   "activeCompanies": 256
+  },
+  {
+   "code": "0128",
+   "label": "Cultivo de especias y de plantas aromaticas y medicinales ají, pimiento",
+   "activeCompanies": 1596
+  },
+  {
+   "code": "0129",
+   "label": "Otros cultivos permanentes n.c.p.",
+   "activeCompanies": 626
+  },
+  {
+   "code": "0130",
+   "label": "Propagacion de plantas (actividades de los viveros, excepto viveros forestales)",
+   "activeCompanies": 1011
+  },
+  {
+   "code": "0140",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "0141",
+   "label": "Cria de ganado bovino y bufalino",
+   "activeCompanies": 9116
+  },
+  {
+   "code": "0142",
+   "label": null,
+   "activeCompanies": 306
+  },
+  {
+   "code": "0143",
+   "label": "Cria de ovejas y cabras",
+   "activeCompanies": 218
+  },
+  {
+   "code": "0144",
+   "label": "Cria de ganado porcino",
+   "activeCompanies": 1872
+  },
+  {
+   "code": "0145",
+   "label": "Cria de aves de corral",
+   "activeCompanies": 3110
+  },
+  {
+   "code": "0149",
+   "label": "Cria de otros animales n.c.p.",
+   "activeCompanies": 990
+  },
+  {
+   "code": "0150",
+   "label": "Explotacion mixta (agricola y pecuaria)",
+   "activeCompanies": 4963
+  },
+  {
+   "code": "0161",
+   "label": "Actividades de apoyo a la agricultura",
+   "activeCompanies": 8011
+  },
+  {
+   "code": "0162",
+   "label": "Actividades de apoyo a la ganaderia",
+   "activeCompanies": 1601
+  },
+  {
+   "code": "0163",
+   "label": "Actividades posteriores a la cosecha",
+   "activeCompanies": 837
+  },
+  {
+   "code": "0164",
+   "label": null,
+   "activeCompanies": 61
+  },
+  {
+   "code": "0170",
+   "label": null,
+   "activeCompanies": 13
+  },
+  {
+   "code": "0210",
+   "label": "Silvicultura y otras actividades forestales",
+   "activeCompanies": 1568
+  },
+  {
+   "code": "0220",
+   "label": "Extraccion de madera",
+   "activeCompanies": 666
+  },
+  {
+   "code": "0230",
+   "label": null,
+   "activeCompanies": 46
+  },
+  {
+   "code": "0240",
+   "label": null,
+   "activeCompanies": 293
+  },
+  {
+   "code": "0311",
+   "label": null,
+   "activeCompanies": 557
+  },
+  {
+   "code": "0312",
+   "label": "Pesca de agua dulce",
+   "activeCompanies": 247
+  },
+  {
+   "code": "0321",
+   "label": "Acuicultura maritima",
+   "activeCompanies": 162
+  },
+  {
+   "code": "0322",
+   "label": "Acuicultura de agua dulce",
+   "activeCompanies": 1591
+  },
+  {
+   "code": "0510",
+   "label": "Extraccion de hulla (carbon de piedra)",
+   "activeCompanies": 3013
+  },
+  {
+   "code": "0520",
+   "label": "Extraccion de carbon lignito",
+   "activeCompanies": 128
+  },
+  {
+   "code": "0610",
+   "label": null,
+   "activeCompanies": 269
+  },
+  {
+   "code": "0620",
+   "label": null,
+   "activeCompanies": 36
+  },
+  {
+   "code": "0710",
+   "label": "Extraccion de minerales de hierro",
+   "activeCompanies": 133
+  },
+  {
+   "code": "0721",
+   "label": null,
+   "activeCompanies": 11
+  },
+  {
+   "code": "0722",
+   "label": "Extraccion de oro y otros metales preciosos",
+   "activeCompanies": 2906
+  },
+  {
+   "code": "0723",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "0729",
+   "label": "Extraccion de otros minerales metaliferos no ferrosos n.c.p.",
+   "activeCompanies": 357
+  },
+  {
+   "code": "0811",
+   "label": "Extraccion de piedra, arena, arcillas comunes, yeso y anhidrita",
+   "activeCompanies": 2884
+  },
+  {
+   "code": "0812",
+   "label": "Extraccion de arcillas de uso industrial, caliza, caolin y bentonitas",
+   "activeCompanies": 352
+  },
+  {
+   "code": "0820",
+   "label": "Extraccion de esmeraldas, piedras preciosas y semipreciosas",
+   "activeCompanies": 653
+  },
+  {
+   "code": "0891",
+   "label": null,
+   "activeCompanies": 149
+  },
+  {
+   "code": "0892",
+   "label": null,
+   "activeCompanies": 48
+  },
+  {
+   "code": "0899",
+   "label": "Extraccion de otros minerales no metalicos n.c.p.",
+   "activeCompanies": 294
+  },
+  {
+   "code": "0910",
+   "label": "Actividades de apoyo para la extraccion de petroleo y de gas natural",
+   "activeCompanies": 1406
+  },
+  {
+   "code": "0990",
+   "label": "Actividades de apoyo para otras actividades de explotacion de minas y canteras",
+   "activeCompanies": 747
+  },
+  {
+   "code": "1000",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "1011",
+   "label": "Procesamiento y conservacion de carne y productos carnicos",
+   "activeCompanies": 2787
+  },
+  {
+   "code": "1012",
+   "label": "Procesamiento y conservacion de pescados, crustaceos y moluscos",
+   "activeCompanies": 403
+  },
+  {
+   "code": "1013",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "1020",
+   "label": "Procesamiento y conservacion de frutas, legumbres, hortalizas y tuberculos",
+   "activeCompanies": 3039
+  },
+  {
+   "code": "1030",
+   "label": "Elaboracion de aceites y grasas de origen vegetal y animal",
+   "activeCompanies": 312
+  },
+  {
+   "code": "1031",
+   "label": null,
+   "activeCompanies": 135
+  },
+  {
+   "code": "1032",
+   "label": null,
+   "activeCompanies": 79
+  },
+  {
+   "code": "1033",
+   "label": null,
+   "activeCompanies": 41
+  },
+  {
+   "code": "1040",
+   "label": "Elaboracion de productos lacteos",
+   "activeCompanies": 2607
+  },
+  {
+   "code": "1051",
+   "label": "Elaboracion de productos de molineria",
+   "activeCompanies": 1275
+  },
+  {
+   "code": "1052",
+   "label": null,
+   "activeCompanies": 120
+  },
+  {
+   "code": "1061",
+   "label": "Trilla de cafe",
+   "activeCompanies": 345
+  },
+  {
+   "code": "1062",
+   "label": "Descafeinado, tostion y molienda del cafe",
+   "activeCompanies": 835
+  },
+  {
+   "code": "1063",
+   "label": "Otros derivados del cafe",
+   "activeCompanies": 274
+  },
+  {
+   "code": "1071",
+   "label": null,
+   "activeCompanies": 89
+  },
+  {
+   "code": "1072",
+   "label": null,
+   "activeCompanies": 579
+  },
+  {
+   "code": "1081",
+   "label": "Elaboracion de productos de panaderia",
+   "activeCompanies": 4982
+  },
+  {
+   "code": "1082",
+   "label": "Elaboracion de cacao, chocolate y productos de confiteria",
+   "activeCompanies": 903
+  },
+  {
+   "code": "1083",
+   "label": null,
+   "activeCompanies": 133
+  },
+  {
+   "code": "1084",
+   "label": "Elaboracion de comidas y platos preparados",
+   "activeCompanies": 2610
+  },
+  {
+   "code": "1089",
+   "label": "Elaboracion de otros productos alimenticios n.c.p.",
+   "activeCompanies": 4304
+  },
+  {
+   "code": "1090",
+   "label": "Elaboracion de alimentos preparados para animales",
+   "activeCompanies": 1145
+  },
+  {
+   "code": "1100",
+   "label": null,
+   "activeCompanies": 11
+  },
+  {
+   "code": "1101",
+   "label": "Destilacion, rectificacion y mezcla de bebidas alcoholicas",
+   "activeCompanies": 433
+  },
+  {
+   "code": "1102",
+   "label": "Elaboracion de bebidas fermentadas no destiladas",
+   "activeCompanies": 292
+  },
+  {
+   "code": "1103",
+   "label": "Produccion de malta, elaboracion de cervezas y otras bebidas malteadas",
+   "activeCompanies": 534
+  },
+  {
+   "code": "1104",
+   "label": "Elaboracion de bebidas no alcoholicas, produccion de aguas minerales y otras aguas embotelladas",
+   "activeCompanies": 1749
+  },
+  {
+   "code": "1110",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "1120",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "1180",
+   "label": null,
+   "activeCompanies": 21
+  },
+  {
+   "code": "1181",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "1190",
+   "label": null,
+   "activeCompanies": 89
+  },
+  {
+   "code": "1200",
+   "label": null,
+   "activeCompanies": 52
+  },
+  {
+   "code": "1210",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "1240",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "1250",
+   "label": null,
+   "activeCompanies": 17
+  },
+  {
+   "code": "1290",
+   "label": null,
+   "activeCompanies": 26
+  },
+  {
+   "code": "1300",
+   "label": null,
+   "activeCompanies": 224
+  },
+  {
+   "code": "1311",
+   "label": "Preparacion e hilatura de fibras textiles",
+   "activeCompanies": 522
+  },
+  {
+   "code": "1312",
+   "label": "Tejeduria de productos textiles",
+   "activeCompanies": 902
+  },
+  {
+   "code": "1313",
+   "label": "Acabado de productos textiles",
+   "activeCompanies": 881
+  },
+  {
+   "code": "1391",
+   "label": "Fabricacion de tejidos de punto y ganchillo",
+   "activeCompanies": 304
+  },
+  {
+   "code": "1392",
+   "label": "Confeccion de articulos con materiales textiles, excepto prendas de vestir",
+   "activeCompanies": 1595
+  },
+  {
+   "code": "1393",
+   "label": "Fabricacion de tapetes y alfombras para pisos",
+   "activeCompanies": 155
+  },
+  {
+   "code": "1394",
+   "label": null,
+   "activeCompanies": 106
+  },
+  {
+   "code": "1399",
+   "label": "Fabricacion de otros articulos textiles n.c.p.",
+   "activeCompanies": 1119
+  },
+  {
+   "code": "1400",
+   "label": null,
+   "activeCompanies": 140
+  },
+  {
+   "code": "1401",
+   "label": null,
+   "activeCompanies": 15
+  },
+  {
+   "code": "1410",
+   "label": "Confeccion de prendas de vestir, excepto prendas de piel",
+   "activeCompanies": 20742
+  },
+  {
+   "code": "1420",
+   "label": "Fabricacion de articulos de piel",
+   "activeCompanies": 277
+  },
+  {
+   "code": "1430",
+   "label": "Fabricacion de articulos de punto y ganchillo",
+   "activeCompanies": 282
+  },
+  {
+   "code": "1500",
+   "label": null,
+   "activeCompanies": 19
+  },
+  {
+   "code": "1511",
+   "label": "Curtido y recurtido de cueros, recurtido y tejido de pieles",
+   "activeCompanies": 606
+  },
+  {
+   "code": "1512",
+   "label": "Fabricacion de articulos de viaje, bolsos de mano y articulos similares elaborados en cuero, y fabricacion de articulos de talabarteria y guarnicioneria",
+   "activeCompanies": 1272
+  },
+  {
+   "code": "1513",
+   "label": "Fabricacion de articulos de viaje, bolsos de mano y articulos similares, articulos de talabarteria y guarnicioneria elaborados en otros materiales",
+   "activeCompanies": 414
+  },
+  {
+   "code": "1521",
+   "label": "Fabricacion de calzado de cuero y piel, con cualquier tipo de suela",
+   "activeCompanies": 2612
+  },
+  {
+   "code": "1522",
+   "label": "Fabricacion de otros tipos de calzado, excepto calzado de cuero y piel",
+   "activeCompanies": 550
+  },
+  {
+   "code": "1523",
+   "label": null,
+   "activeCompanies": 456
+  },
+  {
+   "code": "1543",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "1581",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "1589",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "1610",
+   "label": "Aserrado, acepillado e impregnacion de la madera",
+   "activeCompanies": 1365
+  },
+  {
+   "code": "1620",
+   "label": "Fabricacion de hojas de madera para enchapado, fabricacion de tableros contrachapados tableros laminados, tableros de particulas y otros tableros y paneles",
+   "activeCompanies": 213
+  },
+  {
+   "code": "1630",
+   "label": "Fabricacion de partes y piezas de madera, de carpinteria y ebanisteria para la construccion",
+   "activeCompanies": 2382
+  },
+  {
+   "code": "1640",
+   "label": "Fabricacion de recipientes de madera",
+   "activeCompanies": 218
+  },
+  {
+   "code": "1690",
+   "label": "Fabricacion de otros productos de madera, fabricacion de articulos de corcho, cesteria y esparteria",
+   "activeCompanies": 937
+  },
+  {
+   "code": "1700",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "1701",
+   "label": null,
+   "activeCompanies": 176
+  },
+  {
+   "code": "1702",
+   "label": "Fabricacion de papel y carton ondulado (corrugado), fabricacion de envases, empaques y de embalajes de papel y carton",
+   "activeCompanies": 701
+  },
+  {
+   "code": "1709",
+   "label": "Fabricacion de otros articulos de papel y carton",
+   "activeCompanies": 663
+  },
+  {
+   "code": "1800",
+   "label": null,
+   "activeCompanies": 11
+  },
+  {
+   "code": "1810",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "1811",
+   "label": "Actividades de impresion",
+   "activeCompanies": 5199
+  },
+  {
+   "code": "1812",
+   "label": "Actividades de servicios relacionados con la impresion",
+   "activeCompanies": 1707
+  },
+  {
+   "code": "1820",
+   "label": null,
+   "activeCompanies": 65
+  },
+  {
+   "code": "1900",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "1910",
+   "label": null,
+   "activeCompanies": 225
+  },
+  {
+   "code": "1921",
+   "label": null,
+   "activeCompanies": 468
+  },
+  {
+   "code": "1922",
+   "label": null,
+   "activeCompanies": 22
+  },
+  {
+   "code": "1929",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "1931",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2000",
+   "label": null,
+   "activeCompanies": 7
+  },
+  {
+   "code": "2010",
+   "label": null,
+   "activeCompanies": 11
+  },
+  {
+   "code": "2011",
+   "label": "Fabricacion de sustancias y productos quimicos basicos",
+   "activeCompanies": 960
+  },
+  {
+   "code": "2012",
+   "label": "Fabricacion de abonos y compuestos inorganicos nitrogenados",
+   "activeCompanies": 816
+  },
+  {
+   "code": "2013",
+   "label": "Fabricacion de plasticos en formas primarias",
+   "activeCompanies": 740
+  },
+  {
+   "code": "2014",
+   "label": null,
+   "activeCompanies": 43
+  },
+  {
+   "code": "2020",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "2021",
+   "label": "Fabricacion de plaguicidas y otros productos quimicos de uso agropecuario",
+   "activeCompanies": 388
+  },
+  {
+   "code": "2022",
+   "label": "Fabricacion de pinturas, barnices y revestimientos similares, tintas para impresion y masillas",
+   "activeCompanies": 1128
+  },
+  {
+   "code": "2023",
+   "label": "Fabricacion de jabones y detergentes, preparados para limpiar y pulir, perfumes y preparados de tocador",
+   "activeCompanies": 3372
+  },
+  {
+   "code": "2029",
+   "label": "Fabricacion de otros productos quimicos n.c.p.",
+   "activeCompanies": 1066
+  },
+  {
+   "code": "2030",
+   "label": null,
+   "activeCompanies": 108
+  },
+  {
+   "code": "2090",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "2100",
+   "label": "Fabricacion de productos farmaceuticos, sustancias quimicas medicinales productos botanicos de uso farmaceutico",
+   "activeCompanies": 2364
+  },
+  {
+   "code": "2211",
+   "label": null,
+   "activeCompanies": 45
+  },
+  {
+   "code": "2212",
+   "label": "Reencauche de llantas usadas",
+   "activeCompanies": 113
+  },
+  {
+   "code": "2219",
+   "label": "Fabricacion de formas basicas de caucho y otros productos de caucho, n.c.p.",
+   "activeCompanies": 811
+  },
+  {
+   "code": "2221",
+   "label": "Fabricacion de formas basicas de plastico",
+   "activeCompanies": 1356
+  },
+  {
+   "code": "2229",
+   "label": "Fabricacion de articulos de plastico n.c.p.",
+   "activeCompanies": 4034
+  },
+  {
+   "code": "2231",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "2232",
+   "label": null,
+   "activeCompanies": 18
+  },
+  {
+   "code": "2233",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2239",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "2240",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "2310",
+   "label": "Fabricacion de vidrio y productos de vidrio",
+   "activeCompanies": 653
+  },
+  {
+   "code": "2330",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2391",
+   "label": "Fabricacion de productos refractarios",
+   "activeCompanies": 139
+  },
+  {
+   "code": "2392",
+   "label": "Fabricacion de materiales de arcilla para la construccion",
+   "activeCompanies": 1053
+  },
+  {
+   "code": "2393",
+   "label": "Fabricacion de otros productos de ceramica y porcelana",
+   "activeCompanies": 247
+  },
+  {
+   "code": "2394",
+   "label": "Fabricacion de cemento, cal y yeso",
+   "activeCompanies": 216
+  },
+  {
+   "code": "2395",
+   "label": "Fabricacion de articulos de hormigon, cemento y yeso",
+   "activeCompanies": 1319
+  },
+  {
+   "code": "2396",
+   "label": "Corte, tallado y acabado de la piedra",
+   "activeCompanies": 308
+  },
+  {
+   "code": "2399",
+   "label": "Fabricacion de otros productos minerales no metalicos n.c.p.",
+   "activeCompanies": 289
+  },
+  {
+   "code": "2410",
+   "label": "Industrias basicas de hierro y de acero",
+   "activeCompanies": 1445
+  },
+  {
+   "code": "2412",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "2415",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2421",
+   "label": "Industrias basicas de metales preciosos",
+   "activeCompanies": 209
+  },
+  {
+   "code": "2422",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "2424",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2429",
+   "label": "Industrias basicas de otros metales no ferrosos",
+   "activeCompanies": 379
+  },
+  {
+   "code": "2431",
+   "label": null,
+   "activeCompanies": 260
+  },
+  {
+   "code": "2432",
+   "label": null,
+   "activeCompanies": 296
+  },
+  {
+   "code": "2511",
+   "label": "Fabricacion de productos metalicos para uso estructural",
+   "activeCompanies": 9150
+  },
+  {
+   "code": "2512",
+   "label": null,
+   "activeCompanies": 467
+  },
+  {
+   "code": "2513",
+   "label": null,
+   "activeCompanies": 51
+  },
+  {
+   "code": "2520",
+   "label": "Fabricacion de armas y municiones",
+   "activeCompanies": 6
+  },
+  {
+   "code": "2591",
+   "label": "Forja, prensado, estampado y laminado de metal, pulvimetalurgia",
+   "activeCompanies": 249
+  },
+  {
+   "code": "2592",
+   "label": "Tratamiento y revestimiento de metales, mecanizado",
+   "activeCompanies": 1454
+  },
+  {
+   "code": "2593",
+   "label": "Fabricacion de articulos de cuchilleria, herramientas de mano y articulos de ferreteria",
+   "activeCompanies": 282
+  },
+  {
+   "code": "2599",
+   "label": "Fabricacion de otros productos elaborados de metal n.c.p.",
+   "activeCompanies": 3124
+  },
+  {
+   "code": "2610",
+   "label": "Fabricacion de componentes y tableros electronicos",
+   "activeCompanies": 292
+  },
+  {
+   "code": "2620",
+   "label": null,
+   "activeCompanies": 146
+  },
+  {
+   "code": "2630",
+   "label": "Fabricacion de equipos de comunicacion",
+   "activeCompanies": 136
+  },
+  {
+   "code": "2640",
+   "label": "Fabricacion de aparatos electronicos de consumo",
+   "activeCompanies": 97
+  },
+  {
+   "code": "2651",
+   "label": "Fabricacion de equipo de medicion, prueba, navegacion y control",
+   "activeCompanies": 226
+  },
+  {
+   "code": "2652",
+   "label": null,
+   "activeCompanies": 24
+  },
+  {
+   "code": "2660",
+   "label": "Fabricacion de equipo de irradiacion y equipo electronico de uso medico y terapeutico",
+   "activeCompanies": 49
+  },
+  {
+   "code": "2670",
+   "label": "Fabricacion de instrumentos opticos y equipo fotografico",
+   "activeCompanies": 172
+  },
+  {
+   "code": "2680",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "2691",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2693",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2700",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2710",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2711",
+   "label": null,
+   "activeCompanies": 404
+  },
+  {
+   "code": "2712",
+   "label": "Fabricacion de aparatos de distribucion y control de la energia electrica",
+   "activeCompanies": 307
+  },
+  {
+   "code": "2720",
+   "label": "Fabricacion de pilas, baterias y acumuladores electricos",
+   "activeCompanies": 91
+  },
+  {
+   "code": "2731",
+   "label": null,
+   "activeCompanies": 97
+  },
+  {
+   "code": "2732",
+   "label": null,
+   "activeCompanies": 58
+  },
+  {
+   "code": "2740",
+   "label": "Fabricacion de equipos electricos de iluminacion",
+   "activeCompanies": 341
+  },
+  {
+   "code": "2750",
+   "label": "Fabricacion de aparatos de uso domestico",
+   "activeCompanies": 391
+  },
+  {
+   "code": "2790",
+   "label": null,
+   "activeCompanies": 434
+  },
+  {
+   "code": "2800",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "2811",
+   "label": "Fabricacion de motores, turbinas, y partes para motores de combustion interna",
+   "activeCompanies": 115
+  },
+  {
+   "code": "2812",
+   "label": "Fabricacion de equipos de potencia hidraulica y neumatica",
+   "activeCompanies": 122
+  },
+  {
+   "code": "2813",
+   "label": null,
+   "activeCompanies": 124
+  },
+  {
+   "code": "2814",
+   "label": null,
+   "activeCompanies": 70
+  },
+  {
+   "code": "2815",
+   "label": null,
+   "activeCompanies": 139
+  },
+  {
+   "code": "2816",
+   "label": null,
+   "activeCompanies": 315
+  },
+  {
+   "code": "2817",
+   "label": null,
+   "activeCompanies": 80
+  },
+  {
+   "code": "2818",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "2819",
+   "label": "Fabricacion de otros tipos de maquinaria y equipo de uso general n.c.p.",
+   "activeCompanies": 1361
+  },
+  {
+   "code": "2821",
+   "label": "Fabricacion de maquinaria agropecuaria y forestal",
+   "activeCompanies": 450
+  },
+  {
+   "code": "2822",
+   "label": null,
+   "activeCompanies": 320
+  },
+  {
+   "code": "2823",
+   "label": "Fabricacion de maquinaria para la metalurgia",
+   "activeCompanies": 69
+  },
+  {
+   "code": "2824",
+   "label": null,
+   "activeCompanies": 251
+  },
+  {
+   "code": "2825",
+   "label": "Fabricacion de maquinaria para la elaboracion de alimentos, bebidas y tabaco",
+   "activeCompanies": 371
+  },
+  {
+   "code": "2826",
+   "label": null,
+   "activeCompanies": 80
+  },
+  {
+   "code": "2829",
+   "label": null,
+   "activeCompanies": 1036
+  },
+  {
+   "code": "2892",
+   "label": null,
+   "activeCompanies": 8
+  },
+  {
+   "code": "2893",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "2910",
+   "label": null,
+   "activeCompanies": 234
+  },
+  {
+   "code": "2919",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "2920",
+   "label": "Fabricacion de carrocerias para vehiculos automotores, fabricacion de remolques y semirremolques",
+   "activeCompanies": 1632
+  },
+  {
+   "code": "2922",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "2930",
+   "label": null,
+   "activeCompanies": 1218
+  },
+  {
+   "code": "3000",
+   "label": null,
+   "activeCompanies": 8
+  },
+  {
+   "code": "3011",
+   "label": null,
+   "activeCompanies": 283
+  },
+  {
+   "code": "3012",
+   "label": null,
+   "activeCompanies": 47
+  },
+  {
+   "code": "3020",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "3030",
+   "label": null,
+   "activeCompanies": 184
+  },
+  {
+   "code": "3040",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "3091",
+   "label": null,
+   "activeCompanies": 50
+  },
+  {
+   "code": "3092",
+   "label": "Fabricacion de bicicletas y de sillas de ruedas para personas con discapacidad",
+   "activeCompanies": 123
+  },
+  {
+   "code": "3099",
+   "label": null,
+   "activeCompanies": 54
+  },
+  {
+   "code": "3110",
+   "label": "Fabricacion de muebles",
+   "activeCompanies": 7279
+  },
+  {
+   "code": "3120",
+   "label": "Fabricacion de colchones y somieres",
+   "activeCompanies": 514
+  },
+  {
+   "code": "3200",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "3210",
+   "label": "Fabricacion de joyas, bisuteria y articulos conexos",
+   "activeCompanies": 776
+  },
+  {
+   "code": "3211",
+   "label": null,
+   "activeCompanies": 641
+  },
+  {
+   "code": "3212",
+   "label": null,
+   "activeCompanies": 191
+  },
+  {
+   "code": "3220",
+   "label": "Fabricacion de instrumentos musicales",
+   "activeCompanies": 83
+  },
+  {
+   "code": "3230",
+   "label": "Fabricacion de articulos y equipo para la practica del deporte",
+   "activeCompanies": 301
+  },
+  {
+   "code": "3240",
+   "label": "Fabricacion de juegos, juguetes y rompecabezas",
+   "activeCompanies": 468
+  },
+  {
+   "code": "3250",
+   "label": "Fabricacion de instrumentos, aparatos y materiales medicos y odontologicos (incluido mobiliario)",
+   "activeCompanies": 1369
+  },
+  {
+   "code": "3290",
+   "label": "Otras industrias manufactureras n.c.p.",
+   "activeCompanies": 2375
+  },
+  {
+   "code": "3311",
+   "label": "Mantenimiento y reparacion especializado de productos elaborados en metal",
+   "activeCompanies": 1747
+  },
+  {
+   "code": "3312",
+   "label": "Mantenimiento y reparacion especializado de maquinaria y equipo",
+   "activeCompanies": 12717
+  },
+  {
+   "code": "3313",
+   "label": "Mantenimiento y reparacion especializado de equipo electronico y optico",
+   "activeCompanies": 978
+  },
+  {
+   "code": "3314",
+   "label": "Mantenimiento y reparacion especializado de equipo electrico",
+   "activeCompanies": 1566
+  },
+  {
+   "code": "3315",
+   "label": "Mantenimiento y reparación especializado de equipo de transporte, excepto los vehículos automotores, motocicletas y bicicletas",
+   "activeCompanies": 407
+  },
+  {
+   "code": "3319",
+   "label": "Mantenimiento y reparacion de otros tipos de equipos y sus componentes n.c.p.",
+   "activeCompanies": 854
+  },
+  {
+   "code": "3320",
+   "label": "Instalacion especializada de maquinaria y equipo industrial",
+   "activeCompanies": 1130
+  },
+  {
+   "code": "3511",
+   "label": "Generacion de energia electrica",
+   "activeCompanies": 2910
+  },
+  {
+   "code": "3512",
+   "label": "Transmision de energia electrica",
+   "activeCompanies": 144
+  },
+  {
+   "code": "3513",
+   "label": null,
+   "activeCompanies": 118
+  },
+  {
+   "code": "3514",
+   "label": null,
+   "activeCompanies": 458
+  },
+  {
+   "code": "3520",
+   "label": "Produccion de gas, distribucion de combustibles gaseosos por tuberias",
+   "activeCompanies": 1210
+  },
+  {
+   "code": "3530",
+   "label": "Suministro de vapor y aire acondicionado",
+   "activeCompanies": 309
+  },
+  {
+   "code": "3592",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "3600",
+   "label": "Captacion, tratamiento y distribucion de agua",
+   "activeCompanies": 6141
+  },
+  {
+   "code": "3619",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "3700",
+   "label": "Evacuacion y tratamiento de aguas residuales",
+   "activeCompanies": 585
+  },
+  {
+   "code": "3811",
+   "label": "Recoleccion de desechos no peligrosos",
+   "activeCompanies": 2242
+  },
+  {
+   "code": "3812",
+   "label": null,
+   "activeCompanies": 184
+  },
+  {
+   "code": "3821",
+   "label": "Tratamiento y disposicion de desechos no peligrosos",
+   "activeCompanies": 535
+  },
+  {
+   "code": "3822",
+   "label": "Tratamiento y disposicion de desechos peligrosos",
+   "activeCompanies": 150
+  },
+  {
+   "code": "3830",
+   "label": "Recuperacion de materiales",
+   "activeCompanies": 4258
+  },
+  {
+   "code": "3900",
+   "label": "Actividades de saneamiento ambiental y otros servicios de gestion de desechos",
+   "activeCompanies": 3021
+  },
+  {
+   "code": "4000",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "4010",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "4111",
+   "label": "Construccion de edificios residenciales",
+   "activeCompanies": 43107
+  },
+  {
+   "code": "4112",
+   "label": "Construccion de edificios no residenciales",
+   "activeCompanies": 5987
+  },
+  {
+   "code": "4210",
+   "label": "Construccion de carreteras y vias de ferrocarril",
+   "activeCompanies": 5259
+  },
+  {
+   "code": "4220",
+   "label": "Construccion de proyectos de servicio publico",
+   "activeCompanies": 2938
+  },
+  {
+   "code": "4290",
+   "label": "Construccion de otras obras de ingenieria civil",
+   "activeCompanies": 49101
+  },
+  {
+   "code": "4311",
+   "label": "Demolición",
+   "activeCompanies": 717
+  },
+  {
+   "code": "4312",
+   "label": "Preparacion del terreno",
+   "activeCompanies": 2289
+  },
+  {
+   "code": "4321",
+   "label": "Instalaciones electricas",
+   "activeCompanies": 13778
+  },
+  {
+   "code": "4322",
+   "label": "Instalaciones de fontaneria, calefaccion y aire acondicionado",
+   "activeCompanies": 4780
+  },
+  {
+   "code": "4329",
+   "label": "Otras instalaciones especializadas",
+   "activeCompanies": 2400
+  },
+  {
+   "code": "4330",
+   "label": "Terminacion y acabado de edificios y obras de ingenieria civil",
+   "activeCompanies": 16828
+  },
+  {
+   "code": "4390",
+   "label": "Otras actividades especializadas para la construccion de edificios y obras de ingenieria civil",
+   "activeCompanies": 10816
+  },
+  {
+   "code": "4500",
+   "label": null,
+   "activeCompanies": 21
+  },
+  {
+   "code": "4511",
+   "label": "Comercio de vehiculos automotores nuevos",
+   "activeCompanies": 3552
+  },
+  {
+   "code": "4512",
+   "label": "Comercio de vehiculos automotores usados",
+   "activeCompanies": 2919
+  },
+  {
+   "code": "4520",
+   "label": "Mantenimiento y reparacion de vehiculos automotores",
+   "activeCompanies": 11991
+  },
+  {
+   "code": "4521",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "4530",
+   "label": "Comercio de partes, piezas (autopartes) y accesorios (lujos) para vehiculos automotores",
+   "activeCompanies": 16964
+  },
+  {
+   "code": "4541",
+   "label": "Comercio de motocicletas y de sus partes, piezas y accesorios",
+   "activeCompanies": 4205
+  },
+  {
+   "code": "4542",
+   "label": "Mantenimiento y reparacion de motocicletas y de sus partes y piezas",
+   "activeCompanies": 510
+  },
+  {
+   "code": "4543",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "4559",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "4600",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "4610",
+   "label": "Comercio al por mayor a cambio de una retribucion o por contrata",
+   "activeCompanies": 6684
+  },
+  {
+   "code": "4620",
+   "label": "Comercio al por mayor de materias primas agropecuarias, animales vivos",
+   "activeCompanies": 11824
+  },
+  {
+   "code": "4631",
+   "label": "Comercio al por mayor de productos alimenticios",
+   "activeCompanies": 20727
+  },
+  {
+   "code": "4632",
+   "label": "Comercio al por mayor de bebidas y tabaco",
+   "activeCompanies": 12567
+  },
+  {
+   "code": "4641",
+   "label": "Comercio al por mayor de productos textiles, productos confeccionados para uso domestico",
+   "activeCompanies": 4264
+  },
+  {
+   "code": "4642",
+   "label": "Comercio al por mayor de prendas de vestir",
+   "activeCompanies": 5388
+  },
+  {
+   "code": "4643",
+   "label": "Comercio al por mayor de calzado",
+   "activeCompanies": 1160
+  },
+  {
+   "code": "4644",
+   "label": "Comercio al por mayor de aparatos y equipo de uso domestico",
+   "activeCompanies": 2870
+  },
+  {
+   "code": "4645",
+   "label": "Comercio al por mayor de productos farmaceuticos, medicinales, cosmeticos y de tocador",
+   "activeCompanies": 13254
+  },
+  {
+   "code": "4649",
+   "label": "Comercio al por mayor de otros utensilios domesticos n.c.p.",
+   "activeCompanies": 4968
+  },
+  {
+   "code": "4651",
+   "label": "Comercio al por mayor de computadores, equipo periferico y programas de informatica",
+   "activeCompanies": 3941
+  },
+  {
+   "code": "4652",
+   "label": "Comercio al por mayor de equipo, partes y piezas electronicos y de telecomunicaciones",
+   "activeCompanies": 4163
+  },
+  {
+   "code": "4653",
+   "label": "Comercio al por mayor de maquinaria y equipo agropecuarios",
+   "activeCompanies": 2673
+  },
+  {
+   "code": "4659",
+   "label": "Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.",
+   "activeCompanies": 16654
+  },
+  {
+   "code": "4661",
+   "label": "Comercio al por mayor de combustibles solidos, liquidos, gaseosos y productos conexos",
+   "activeCompanies": 4369
+  },
+  {
+   "code": "4662",
+   "label": "Comercio al por mayor de metales y productos metaliferos",
+   "activeCompanies": 3295
+  },
+  {
+   "code": "4663",
+   "label": "Comercio al por mayor de materiales de construccion, articulos de ferreteria, pinturas, productos de vidrio, equipo y materiales de fontaneria y calefaccion",
+   "activeCompanies": 18865
+  },
+  {
+   "code": "4664",
+   "label": "Comercio al por mayor de productos quimicos basicos, cauchos y plasticos en formas primarias y productos quimicos de uso agropecuario",
+   "activeCompanies": 6465
+  },
+  {
+   "code": "4665",
+   "label": "Comercio al por mayor de desperdicios, desechos y chatarra",
+   "activeCompanies": 3782
+  },
+  {
+   "code": "4669",
+   "label": "Comercio al por mayor de otros productos n.c.p.",
+   "activeCompanies": 7496
+  },
+  {
+   "code": "4690",
+   "label": "Comercio al por mayor no especializado",
+   "activeCompanies": 11483
+  },
+  {
+   "code": "4711",
+   "label": "Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco",
+   "activeCompanies": 10190
+  },
+  {
+   "code": "4719",
+   "label": "Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (viveres en general), bebidas y tabaco",
+   "activeCompanies": 5643
+  },
+  {
+   "code": "4721",
+   "label": "Comercio al por menor de productos agricolas para el consumo en establecimientos especializados",
+   "activeCompanies": 4928
+  },
+  {
+   "code": "4722",
+   "label": "Comercio al por menor de leche, productos lacteos y huevos, en establecimientos especializados",
+   "activeCompanies": 2069
+  },
+  {
+   "code": "4723",
+   "label": "Comercio al por menor de carnes (incluye aves de corral), productos carnicos, pescados y productos de mar, en establecimientos especializados",
+   "activeCompanies": 5733
+  },
+  {
+   "code": "4724",
+   "label": "Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados",
+   "activeCompanies": 1151
+  },
+  {
+   "code": "4729",
+   "label": "Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados",
+   "activeCompanies": 4075
+  },
+  {
+   "code": "4731",
+   "label": "Comercio al por menor de combustible para automotores",
+   "activeCompanies": 4935
+  },
+  {
+   "code": "4732",
+   "label": "Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para vehiculos automotores",
+   "activeCompanies": 2039
+  },
+  {
+   "code": "4741",
+   "label": "Comercio al por menor de computadores, equipos perifericos, programas de informatica y equipos de telecomunicaciones en establecimientos especializados",
+   "activeCompanies": 9484
+  },
+  {
+   "code": "4742",
+   "label": "Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados",
+   "activeCompanies": 586
+  },
+  {
+   "code": "4751",
+   "label": "Comercio al por menor de productos textiles en establecimientos especializados",
+   "activeCompanies": 2698
+  },
+  {
+   "code": "4752",
+   "label": "Comercio al por menor de articulos de ferreteria, pinturas y productos de vidrio en establecimientos especializados",
+   "activeCompanies": 19631
+  },
+  {
+   "code": "4753",
+   "label": "Comercio al por menor de tapices, alfombras y recubrimientos para paredes y pisos en establecimientos especializados",
+   "activeCompanies": 511
+  },
+  {
+   "code": "4754",
+   "label": "Comercio al por menor de electrodomesticos y gasodomesticos de uso domestico, muebles y equipos de iluminacion",
+   "activeCompanies": 8660
+  },
+  {
+   "code": "4755",
+   "label": "Comercio al por menor de articulos y utensilios de uso domestico",
+   "activeCompanies": 3368
+  },
+  {
+   "code": "4759",
+   "label": "Comercio al por menor de otros articulos domesticos en establecimientos especializados",
+   "activeCompanies": 7453
+  },
+  {
+   "code": "4761",
+   "label": "Comercio al por menor de libros, periodicos, materiales y articulos de papeleria y escritorio, en establecimientos especializados",
+   "activeCompanies": 8216
+  },
+  {
+   "code": "4762",
+   "label": "Comercio al por menor de articulos deportivos, en establecimientos especializados",
+   "activeCompanies": 1575
+  },
+  {
+   "code": "4769",
+   "label": "Comercio al por menor de otros articulos culturales y de entretenimiento n.c.p. enestablecimientos especializados",
+   "activeCompanies": 773
+  },
+  {
+   "code": "4771",
+   "label": "Comercio al por menor de prendas de vestir y sus accesorios (incluye articulos de piel) en establecimientos especializados",
+   "activeCompanies": 10362
+  },
+  {
+   "code": "4772",
+   "label": "Comercio al por menor de todo tipo de calzado y articulos de cuero y sucedaneos del cuero en establecimientos especializados",
+   "activeCompanies": 2896
+  },
+  {
+   "code": "4773",
+   "label": "Comercio al por menor de productos farmaceuticos y medicinales, cosmeticos y articulos de tocador en establecimientos especializados",
+   "activeCompanies": 14337
+  },
+  {
+   "code": "4774",
+   "label": "Comercio al por menor de otros productos nuevos en establecimientos especializados",
+   "activeCompanies": 5923
+  },
+  {
+   "code": "4775",
+   "label": "Comercio al por menor de articulos de segunda mano",
+   "activeCompanies": 913
+  },
+  {
+   "code": "4781",
+   "label": "Comercio al por menor de alimentos, bebidas y tabaco en puestos de venta moviles",
+   "activeCompanies": 244
+  },
+  {
+   "code": "4782",
+   "label": "Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta moviles",
+   "activeCompanies": 375
+  },
+  {
+   "code": "4789",
+   "label": "Comercio al por menor de otros productos en puestos de venta moviles",
+   "activeCompanies": 695
+  },
+  {
+   "code": "4791",
+   "label": "Comercio al por menor realizado a traves de internet",
+   "activeCompanies": 7624
+  },
+  {
+   "code": "4792",
+   "label": "Comercio al por menor realizado a traves de casas de venta o por correo",
+   "activeCompanies": 235
+  },
+  {
+   "code": "4799",
+   "label": "Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados",
+   "activeCompanies": 4174
+  },
+  {
+   "code": "4911",
+   "label": null,
+   "activeCompanies": 169
+  },
+  {
+   "code": "4912",
+   "label": "Transporte ferreo de carga",
+   "activeCompanies": 254
+  },
+  {
+   "code": "4921",
+   "label": "Transporte de pasajeros",
+   "activeCompanies": 11934
+  },
+  {
+   "code": "4922",
+   "label": "Transporte mixto",
+   "activeCompanies": 1914
+  },
+  {
+   "code": "4923",
+   "label": "Transporte de carga por carretera",
+   "activeCompanies": 24469
+  },
+  {
+   "code": "4930",
+   "label": null,
+   "activeCompanies": 377
+  },
+  {
+   "code": "4931",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "5000",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "5010",
+   "label": null,
+   "activeCompanies": 136
+  },
+  {
+   "code": "5011",
+   "label": null,
+   "activeCompanies": 682
+  },
+  {
+   "code": "5012",
+   "label": null,
+   "activeCompanies": 406
+  },
+  {
+   "code": "5020",
+   "label": null,
+   "activeCompanies": 50
+  },
+  {
+   "code": "5021",
+   "label": null,
+   "activeCompanies": 465
+  },
+  {
+   "code": "5022",
+   "label": null,
+   "activeCompanies": 278
+  },
+  {
+   "code": "5100",
+   "label": null,
+   "activeCompanies": 42
+  },
+  {
+   "code": "5111",
+   "label": null,
+   "activeCompanies": 443
+  },
+  {
+   "code": "5112",
+   "label": null,
+   "activeCompanies": 88
+  },
+  {
+   "code": "5113",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "5119",
+   "label": null,
+   "activeCompanies": 171
+  },
+  {
+   "code": "5121",
+   "label": null,
+   "activeCompanies": 305
+  },
+  {
+   "code": "5122",
+   "label": null,
+   "activeCompanies": 274
+  },
+  {
+   "code": "5134",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "5136",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "5137",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "5139",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "5161",
+   "label": null,
+   "activeCompanies": 13
+  },
+  {
+   "code": "5162",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "5163",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "5169",
+   "label": null,
+   "activeCompanies": 12
+  },
+  {
+   "code": "5190",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "5200",
+   "label": null,
+   "activeCompanies": 10
+  },
+  {
+   "code": "5210",
+   "label": "Almacenamiento y deposito",
+   "activeCompanies": 1119
+  },
+  {
+   "code": "5211",
+   "label": null,
+   "activeCompanies": 134
+  },
+  {
+   "code": "5221",
+   "label": "Actividades de estaciones, vias y servicios complementarios para el transporte terrestre",
+   "activeCompanies": 2267
+  },
+  {
+   "code": "5222",
+   "label": null,
+   "activeCompanies": 435
+  },
+  {
+   "code": "5223",
+   "label": null,
+   "activeCompanies": 182
+  },
+  {
+   "code": "5224",
+   "label": "Manipulacion de carga",
+   "activeCompanies": 2878
+  },
+  {
+   "code": "5225",
+   "label": null,
+   "activeCompanies": 51
+  },
+  {
+   "code": "5229",
+   "label": "Otras actividades complementarias al transporte",
+   "activeCompanies": 6577
+  },
+  {
+   "code": "5237",
+   "label": null,
+   "activeCompanies": 13
+  },
+  {
+   "code": "5239",
+   "label": null,
+   "activeCompanies": 24
+  },
+  {
+   "code": "5241",
+   "label": null,
+   "activeCompanies": 6
+  },
+  {
+   "code": "5246",
+   "label": null,
+   "activeCompanies": 8
+  },
+  {
+   "code": "5252",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "5262",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "5310",
+   "label": "Actividades postales nacionales",
+   "activeCompanies": 1125
+  },
+  {
+   "code": "5320",
+   "label": "Actividades de mensajeria",
+   "activeCompanies": 3833
+  },
+  {
+   "code": "5500",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "5511",
+   "label": "Alojamiento en hoteles",
+   "activeCompanies": 5896
+  },
+  {
+   "code": "5512",
+   "label": "Alojamiento en apartahoteles",
+   "activeCompanies": 491
+  },
+  {
+   "code": "5513",
+   "label": "Alojamiento en centros vacacionales",
+   "activeCompanies": 291
+  },
+  {
+   "code": "5514",
+   "label": "Alojamiento rural",
+   "activeCompanies": 1379
+  },
+  {
+   "code": "5519",
+   "label": "Otros tipos de alojamiento para visitantes",
+   "activeCompanies": 2252
+  },
+  {
+   "code": "5520",
+   "label": null,
+   "activeCompanies": 178
+  },
+  {
+   "code": "5530",
+   "label": "Servicio por horas",
+   "activeCompanies": 418
+  },
+  {
+   "code": "5590",
+   "label": "Otros tipos de alojamiento n.c.p.",
+   "activeCompanies": 257
+  },
+  {
+   "code": "5611",
+   "label": "Expendio a la mesa de comidas preparadas",
+   "activeCompanies": 20214
+  },
+  {
+   "code": "5612",
+   "label": "Expendio por autoservicio de comidas preparadas",
+   "activeCompanies": 1639
+  },
+  {
+   "code": "5613",
+   "label": "Expendio de comidas preparadas en cafeterias",
+   "activeCompanies": 2768
+  },
+  {
+   "code": "5619",
+   "label": "Otros tipos de expendio de comidas preparadas n.c.p.",
+   "activeCompanies": 3099
+  },
+  {
+   "code": "5621",
+   "label": "Catering para eventos",
+   "activeCompanies": 3352
+  },
+  {
+   "code": "5629",
+   "label": "Actividades de otros servicios de comidas",
+   "activeCompanies": 1219
+  },
+  {
+   "code": "5630",
+   "label": "Expendio de bebidas alcoholicas para el consumo dentro del establecimiento",
+   "activeCompanies": 3619
+  },
+  {
+   "code": "5811",
+   "label": "Edicion de libros",
+   "activeCompanies": 1373
+  },
+  {
+   "code": "5812",
+   "label": "Edicion de directorios y listas de correo",
+   "activeCompanies": 13
+  },
+  {
+   "code": "5813",
+   "label": "Edicion de periodicos, revistas y otras publicaciones periodicas",
+   "activeCompanies": 1649
+  },
+  {
+   "code": "5819",
+   "label": "Otros trabajos de edicion",
+   "activeCompanies": 280
+  },
+  {
+   "code": "5820",
+   "label": "Edicion de programas de informatica (software)",
+   "activeCompanies": 1467
+  },
+  {
+   "code": "5911",
+   "label": "Actividades de produccion de peliculas cinematograficas, videos, programas, anuncios y comerciales de television",
+   "activeCompanies": 4314
+  },
+  {
+   "code": "5912",
+   "label": null,
+   "activeCompanies": 289
+  },
+  {
+   "code": "5913",
+   "label": null,
+   "activeCompanies": 146
+  },
+  {
+   "code": "5914",
+   "label": "Actividades de exhibicion de peliculas cinematograficas y videos",
+   "activeCompanies": 187
+  },
+  {
+   "code": "5920",
+   "label": "Actividades de grabacion de sonido y edicion de musica",
+   "activeCompanies": 1395
+  },
+  {
+   "code": "6000",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "6010",
+   "label": "Actividades de programacion y transmision en el servicio de radiodifusion sonora",
+   "activeCompanies": 1110
+  },
+  {
+   "code": "6020",
+   "label": "Actividades de programacion y transmision de television",
+   "activeCompanies": 675
+  },
+  {
+   "code": "6022",
+   "label": null,
+   "activeCompanies": 17
+  },
+  {
+   "code": "6042",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "6100",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "6110",
+   "label": "Actividades de telecomunicaciones alambricas",
+   "activeCompanies": 6350
+  },
+  {
+   "code": "6111",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6120",
+   "label": "Actividades de telecomunicaciones inalambricas",
+   "activeCompanies": 2505
+  },
+  {
+   "code": "6130",
+   "label": "Actividades de telecomunicacion satelital",
+   "activeCompanies": 695
+  },
+  {
+   "code": "6190",
+   "label": "Otras actividades de telecomunicaciones",
+   "activeCompanies": 6321
+  },
+  {
+   "code": "6200",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6201",
+   "label": "Actividades de desarrollo de sistemas informaticos (planificacion, analisis, diseño, programacion, pruebas)",
+   "activeCompanies": 21119
+  },
+  {
+   "code": "6202",
+   "label": "Actividades de consultoria informatica y actividades de administracion de instalaciones informaticas",
+   "activeCompanies": 12375
+  },
+  {
+   "code": "6209",
+   "label": "Otras actividades de tecnologias de informacion y actividades de servicios informaticos",
+   "activeCompanies": 4096
+  },
+  {
+   "code": "6300",
+   "label": null,
+   "activeCompanies": 11
+  },
+  {
+   "code": "6311",
+   "label": "Procesamiento de datos, alojamiento (hosting) y actividades relacionadas",
+   "activeCompanies": 4132
+  },
+  {
+   "code": "6312",
+   "label": "Portales web",
+   "activeCompanies": 1764
+  },
+  {
+   "code": "6332",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "6339",
+   "label": null,
+   "activeCompanies": 27
+  },
+  {
+   "code": "6390",
+   "label": null,
+   "activeCompanies": 31
+  },
+  {
+   "code": "6391",
+   "label": "Actividades de agencias de noticias",
+   "activeCompanies": 341
+  },
+  {
+   "code": "6399",
+   "label": "Otras actividades de servicio de informacion n.c.p.",
+   "activeCompanies": 714
+  },
+  {
+   "code": "6400",
+   "label": null,
+   "activeCompanies": 20
+  },
+  {
+   "code": "6410",
+   "label": null,
+   "activeCompanies": 12
+  },
+  {
+   "code": "6411",
+   "label": null,
+   "activeCompanies": 20
+  },
+  {
+   "code": "6412",
+   "label": null,
+   "activeCompanies": 63
+  },
+  {
+   "code": "6421",
+   "label": null,
+   "activeCompanies": 272
+  },
+  {
+   "code": "6422",
+   "label": "Actividades de las compañias de financiamiento",
+   "activeCompanies": 228
+  },
+  {
+   "code": "6423",
+   "label": null,
+   "activeCompanies": 134
+  },
+  {
+   "code": "6424",
+   "label": null,
+   "activeCompanies": 233
+  },
+  {
+   "code": "6426",
+   "label": null,
+   "activeCompanies": 108
+  },
+  {
+   "code": "6431",
+   "label": "Fideicomisos, fondos y entidades financieras similares",
+   "activeCompanies": 149
+  },
+  {
+   "code": "6432",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6491",
+   "label": null,
+   "activeCompanies": 56
+  },
+  {
+   "code": "6492",
+   "label": "Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario",
+   "activeCompanies": 3250
+  },
+  {
+   "code": "6493",
+   "label": "Actividades de compra de cartera o factoring",
+   "activeCompanies": 690
+  },
+  {
+   "code": "6494",
+   "label": null,
+   "activeCompanies": 1226
+  },
+  {
+   "code": "6495",
+   "label": null,
+   "activeCompanies": 14
+  },
+  {
+   "code": "6496",
+   "label": null,
+   "activeCompanies": 55
+  },
+  {
+   "code": "6499",
+   "label": "Otras actividades de servicio financiero, excepto las de seguros y pensiones n.c.p.",
+   "activeCompanies": 5703
+  },
+  {
+   "code": "6500",
+   "label": null,
+   "activeCompanies": 18
+  },
+  {
+   "code": "6511",
+   "label": "Seguros generales",
+   "activeCompanies": 3362
+  },
+  {
+   "code": "6512",
+   "label": "Seguros de vida",
+   "activeCompanies": 196
+  },
+  {
+   "code": "6513",
+   "label": null,
+   "activeCompanies": 19
+  },
+  {
+   "code": "6514",
+   "label": null,
+   "activeCompanies": 50
+  },
+  {
+   "code": "6515",
+   "label": null,
+   "activeCompanies": 19
+  },
+  {
+   "code": "6521",
+   "label": "Servicios de seguros sociales de salud",
+   "activeCompanies": 314
+  },
+  {
+   "code": "6522",
+   "label": "Servicios de seguros sociales de riesgos profesionales",
+   "activeCompanies": 272
+  },
+  {
+   "code": "6523",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6531",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "6532",
+   "label": "Regimen de ahorro individual (RAI)",
+   "activeCompanies": 13
+  },
+  {
+   "code": "6593",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "6599",
+   "label": null,
+   "activeCompanies": 119
+  },
+  {
+   "code": "6600",
+   "label": null,
+   "activeCompanies": 15
+  },
+  {
+   "code": "6611",
+   "label": "Administracion de mercados financieros",
+   "activeCompanies": 479
+  },
+  {
+   "code": "6612",
+   "label": "Corretaje de valores y de contratos de productos basicos",
+   "activeCompanies": 1122
+  },
+  {
+   "code": "6613",
+   "label": "Otras actividades relacionadas con el mercado de valores",
+   "activeCompanies": 2042
+  },
+  {
+   "code": "6614",
+   "label": "Actividades de las casas de cambio",
+   "activeCompanies": 443
+  },
+  {
+   "code": "6615",
+   "label": "Actividades de los profesionales de compra y venta de divisas",
+   "activeCompanies": 442
+  },
+  {
+   "code": "6619",
+   "label": "Otras actividades auxiliares de las actividades de servicios financieros n.c.p.",
+   "activeCompanies": 3954
+  },
+  {
+   "code": "6621",
+   "label": "Actividades de agentes y corredores de seguros",
+   "activeCompanies": 17509
+  },
+  {
+   "code": "6629",
+   "label": null,
+   "activeCompanies": 337
+  },
+  {
+   "code": "6630",
+   "label": null,
+   "activeCompanies": 324
+  },
+  {
+   "code": "6700",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "6710",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6721",
+   "label": null,
+   "activeCompanies": 13
+  },
+  {
+   "code": "6810",
+   "label": "Actividades inmobiliarias realizadas con bienes propios o arrendados",
+   "activeCompanies": 65084
+  },
+  {
+   "code": "6820",
+   "label": "Actividades inmobiliarias realizadas a cambio de una retribucion o por contrata",
+   "activeCompanies": 24598
+  },
+  {
+   "code": "6900",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "6910",
+   "label": "Actividades juridicas",
+   "activeCompanies": 28853
+  },
+  {
+   "code": "6920",
+   "label": "Actividades de contabilidad, teneduria de libros, auditoria financiera y asesoria tributaria",
+   "activeCompanies": 12074
+  },
+  {
+   "code": "7000",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "7010",
+   "label": "Actividades de administracion empresarial",
+   "activeCompanies": 14770
+  },
+  {
+   "code": "7020",
+   "label": "Actividades de consultoria de gestion",
+   "activeCompanies": 56530
+  },
+  {
+   "code": "7100",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "7110",
+   "label": "Actividades de arquitectura e ingenieria y otras actividades conexas de consultoria tecnica",
+   "activeCompanies": 18961
+  },
+  {
+   "code": "7111",
+   "label": null,
+   "activeCompanies": 8286
+  },
+  {
+   "code": "7112",
+   "label": null,
+   "activeCompanies": 21305
+  },
+  {
+   "code": "7113",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "7120",
+   "label": "Ensayos y analisis tecnicos",
+   "activeCompanies": 3302
+  },
+  {
+   "code": "7121",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "7122",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "7123",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "7130",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "7200",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "7210",
+   "label": "Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingenieria",
+   "activeCompanies": 2421
+  },
+  {
+   "code": "7220",
+   "label": "Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades",
+   "activeCompanies": 1874
+  },
+  {
+   "code": "7250",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "7300",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "7310",
+   "label": "Publicidad",
+   "activeCompanies": 26721
+  },
+  {
+   "code": "7320",
+   "label": "Estudios de mercado y realizacion de encuestas de opinion publica",
+   "activeCompanies": 1241
+  },
+  {
+   "code": "7400",
+   "label": null,
+   "activeCompanies": 7
+  },
+  {
+   "code": "7410",
+   "label": "Actividades especializadas de diseño",
+   "activeCompanies": 4055
+  },
+  {
+   "code": "7414",
+   "label": null,
+   "activeCompanies": 31
+  },
+  {
+   "code": "7420",
+   "label": "Actividades de fotografia",
+   "activeCompanies": 1184
+  },
+  {
+   "code": "7421",
+   "label": null,
+   "activeCompanies": 32
+  },
+  {
+   "code": "7490",
+   "label": "Otras actividades profesionales, cientificas y tecnicas n.c.p.",
+   "activeCompanies": 12803
+  },
+  {
+   "code": "7499",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "7500",
+   "label": "Actividades veterinarias",
+   "activeCompanies": 2314
+  },
+  {
+   "code": "7515",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "7710",
+   "label": "Alquiler y arrendamiento de vehiculos automotores",
+   "activeCompanies": 2320
+  },
+  {
+   "code": "7721",
+   "label": "Alquiler y arrendamiento de equipo recreativo y deportivo",
+   "activeCompanies": 360
+  },
+  {
+   "code": "7722",
+   "label": "Alquiler de videos y discos",
+   "activeCompanies": 156
+  },
+  {
+   "code": "7729",
+   "label": "Alquiler y arrendamiento de otros efectos personales y enseres domesticos n.c.p.",
+   "activeCompanies": 502
+  },
+  {
+   "code": "7730",
+   "label": "Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p.",
+   "activeCompanies": 7575
+  },
+  {
+   "code": "7740",
+   "label": null,
+   "activeCompanies": 342
+  },
+  {
+   "code": "7810",
+   "label": "Actividades de agencias de empleo",
+   "activeCompanies": 1042
+  },
+  {
+   "code": "7820",
+   "label": "Actividades de agencias de empleo temporal",
+   "activeCompanies": 1369
+  },
+  {
+   "code": "7830",
+   "label": "Otras actividades de suministro de recurso humano",
+   "activeCompanies": 5045
+  },
+  {
+   "code": "7911",
+   "label": "Actividades de las agencias de viaje",
+   "activeCompanies": 10062
+  },
+  {
+   "code": "7912",
+   "label": "Actividades de operadores turisticos",
+   "activeCompanies": 4286
+  },
+  {
+   "code": "7990",
+   "label": "Otros servicios de reserva y actividades relacionadas",
+   "activeCompanies": 1392
+  },
+  {
+   "code": "8000",
+   "label": null,
+   "activeCompanies": 8
+  },
+  {
+   "code": "8010",
+   "label": "Actividades de seguridad privada",
+   "activeCompanies": 4736
+  },
+  {
+   "code": "8020",
+   "label": "Actividades de servicios de sistemas de seguridad",
+   "activeCompanies": 1961
+  },
+  {
+   "code": "8030",
+   "label": "Actividades de detectives e investigadores privados",
+   "activeCompanies": 318
+  },
+  {
+   "code": "8041",
+   "label": null,
+   "activeCompanies": 7
+  },
+  {
+   "code": "8042",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "8043",
+   "label": null,
+   "activeCompanies": 2
+  },
+  {
+   "code": "8045",
+   "label": null,
+   "activeCompanies": 4
+  },
+  {
+   "code": "8046",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "8050",
+   "label": null,
+   "activeCompanies": 3
+  },
+  {
+   "code": "8060",
+   "label": null,
+   "activeCompanies": 61
+  },
+  {
+   "code": "8110",
+   "label": "Actividades combinadas de apoyo a instalaciones",
+   "activeCompanies": 1753
+  },
+  {
+   "code": "8121",
+   "label": "Limpieza general interior de edificios",
+   "activeCompanies": 3117
+  },
+  {
+   "code": "8129",
+   "label": "Otras actividades de limpieza de edificios e instalaciones industriales",
+   "activeCompanies": 5798
+  },
+  {
+   "code": "8130",
+   "label": "Actividades de paisajismo y servicios de mantenimiento conexos",
+   "activeCompanies": 2148
+  },
+  {
+   "code": "8211",
+   "label": "Actividades combinadas de servicios administrativos de oficina",
+   "activeCompanies": 2713
+  },
+  {
+   "code": "8219",
+   "label": "Fotocopiado, preparacion de documentos y otras actividades especializadas de apoyo a oficina",
+   "activeCompanies": 687
+  },
+  {
+   "code": "8220",
+   "label": "Actividades de centros de llamadas (call center)",
+   "activeCompanies": 2869
+  },
+  {
+   "code": "8230",
+   "label": "Organizacion de convenciones y eventos comerciales",
+   "activeCompanies": 6968
+  },
+  {
+   "code": "8291",
+   "label": "Actividades de agencias de cobranza y oficinas de calificacion crediticia",
+   "activeCompanies": 1449
+  },
+  {
+   "code": "8292",
+   "label": "Actividades de envase y empaque",
+   "activeCompanies": 627
+  },
+  {
+   "code": "8299",
+   "label": "Otras actividades de servicio de apoyo a las empresas n.c.p.",
+   "activeCompanies": 23545
+  },
+  {
+   "code": "8411",
+   "label": null,
+   "activeCompanies": 35
+  },
+  {
+   "code": "8412",
+   "label": null,
+   "activeCompanies": 173
+  },
+  {
+   "code": "8413",
+   "label": "Regulacion de las actividades de organismos que prestan servicios de salud, educativos, culturales y otros servicios sociales, excepto servicios de seguridad social",
+   "activeCompanies": 2505
+  },
+  {
+   "code": "8414",
+   "label": "Actividades reguladoras y facilitadoras de la actividad economica",
+   "activeCompanies": 180
+  },
+  {
+   "code": "8415",
+   "label": null,
+   "activeCompanies": 48
+  },
+  {
+   "code": "8421",
+   "label": null,
+   "activeCompanies": 317
+  },
+  {
+   "code": "8422",
+   "label": null,
+   "activeCompanies": 61
+  },
+  {
+   "code": "8423",
+   "label": "Orden publico y actividades de seguridad",
+   "activeCompanies": 66
+  },
+  {
+   "code": "8424",
+   "label": "Administracion de Justicia",
+   "activeCompanies": 63
+  },
+  {
+   "code": "8430",
+   "label": "Actividades de planes de seguridad social de afiliacion obligatoria",
+   "activeCompanies": 759
+  },
+  {
+   "code": "8500",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "8511",
+   "label": "Educacion de la primera infancia",
+   "activeCompanies": 1333
+  },
+  {
+   "code": "8512",
+   "label": "Educacion preescolar",
+   "activeCompanies": 2061
+  },
+  {
+   "code": "8513",
+   "label": "Educacion basica primaria",
+   "activeCompanies": 733
+  },
+  {
+   "code": "8521",
+   "label": "Educacion basica secundaria",
+   "activeCompanies": 533
+  },
+  {
+   "code": "8522",
+   "label": "Educacion media academica",
+   "activeCompanies": 296
+  },
+  {
+   "code": "8523",
+   "label": "Educacion media tecnica y de formacion laboral",
+   "activeCompanies": 965
+  },
+  {
+   "code": "8530",
+   "label": "Establecimientos que combinan diferentes niveles de educacion",
+   "activeCompanies": 1452
+  },
+  {
+   "code": "8532",
+   "label": null,
+   "activeCompanies": 1
+  },
+  {
+   "code": "8541",
+   "label": null,
+   "activeCompanies": 274
+  },
+  {
+   "code": "8542",
+   "label": null,
+   "activeCompanies": 52
+  },
+  {
+   "code": "8543",
+   "label": null,
+   "activeCompanies": 760
+  },
+  {
+   "code": "8544",
+   "label": null,
+   "activeCompanies": 599
+  },
+  {
+   "code": "8551",
+   "label": "Formacion academica no formal",
+   "activeCompanies": 4414
+  },
+  {
+   "code": "8552",
+   "label": "Enseñanza deportiva y recreativa",
+   "activeCompanies": 1786
+  },
+  {
+   "code": "8553",
+   "label": "Enseñanza cultural",
+   "activeCompanies": 2588
+  },
+  {
+   "code": "8559",
+   "label": "Otros tipos de educacion n.c.p.",
+   "activeCompanies": 8188
+  },
+  {
+   "code": "8560",
+   "label": "Actividades de apoyo a la educacion",
+   "activeCompanies": 3103
+  },
+  {
+   "code": "8610",
+   "label": "Actividades de hospitales y clinicas, con internacion",
+   "activeCompanies": 4992
+  },
+  {
+   "code": "8621",
+   "label": "Actividades de la practica medica, sin internacion",
+   "activeCompanies": 17862
+  },
+  {
+   "code": "8622",
+   "label": "Actividades de la practica odontologica",
+   "activeCompanies": 4130
+  },
+  {
+   "code": "8691",
+   "label": "Actividades de apoyo diagnostico",
+   "activeCompanies": 3953
+  },
+  {
+   "code": "8692",
+   "label": "Actividades de apoyo terapeutico",
+   "activeCompanies": 4397
+  },
+  {
+   "code": "8699",
+   "label": "Otras actividades de atencion de la salud humana",
+   "activeCompanies": 8358
+  },
+  {
+   "code": "8710",
+   "label": "Actividades de atencion residencial medicalizada de tipo general",
+   "activeCompanies": 375
+  },
+  {
+   "code": "8720",
+   "label": "Actividades de atencion residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas",
+   "activeCompanies": 326
+  },
+  {
+   "code": "8730",
+   "label": "Actividades de atencion en instituciones para el cuidado de personas mayores y/o discapacitadas",
+   "activeCompanies": 1231
+  },
+  {
+   "code": "8790",
+   "label": null,
+   "activeCompanies": 1041
+  },
+  {
+   "code": "8810",
+   "label": null,
+   "activeCompanies": 848
+  },
+  {
+   "code": "8890",
+   "label": "Otras actividades de asistencia social sin alojamiento",
+   "activeCompanies": 1360
+  },
+  {
+   "code": "8891",
+   "label": null,
+   "activeCompanies": 71
+  },
+  {
+   "code": "8899",
+   "label": null,
+   "activeCompanies": 1807
+  },
+  {
+   "code": "9001",
+   "label": "Creacion literaria",
+   "activeCompanies": 314
+  },
+  {
+   "code": "9002",
+   "label": "Creacion musical",
+   "activeCompanies": 949
+  },
+  {
+   "code": "9003",
+   "label": null,
+   "activeCompanies": 252
+  },
+  {
+   "code": "9004",
+   "label": "Creacion audiovisual",
+   "activeCompanies": 3440
+  },
+  {
+   "code": "9005",
+   "label": "Artes plasticas y visuales",
+   "activeCompanies": 609
+  },
+  {
+   "code": "9006",
+   "label": "Actividades teatrales",
+   "activeCompanies": 2423
+  },
+  {
+   "code": "9007",
+   "label": "Actividades de espectaculos musicales en vivo",
+   "activeCompanies": 4175
+  },
+  {
+   "code": "9008",
+   "label": "Otras actividades de espectaculos en vivo",
+   "activeCompanies": 1056
+  },
+  {
+   "code": "9101",
+   "label": "Actividades de bibliotecas y archivos",
+   "activeCompanies": 580
+  },
+  {
+   "code": "9102",
+   "label": "Actividades y funcionamiento de museos, conservacion de edificios y sitios historicos",
+   "activeCompanies": 237
+  },
+  {
+   "code": "9103",
+   "label": "Actividades de jardines botanicos, zoologicos y reservas naturales",
+   "activeCompanies": 263
+  },
+  {
+   "code": "9200",
+   "label": "Actividades de juegos de azar y apuestas",
+   "activeCompanies": 2659
+  },
+  {
+   "code": "9213",
+   "label": null,
+   "activeCompanies": 51
+  },
+  {
+   "code": "9219",
+   "label": null,
+   "activeCompanies": 9
+  },
+  {
+   "code": "9300",
+   "label": null,
+   "activeCompanies": 34
+  },
+  {
+   "code": "9311",
+   "label": "Gestion de instalaciones deportivas",
+   "activeCompanies": 2965
+  },
+  {
+   "code": "9312",
+   "label": "Actividades de clubes deportivos",
+   "activeCompanies": 1061
+  },
+  {
+   "code": "9319",
+   "label": "Otras actividades deportivas",
+   "activeCompanies": 2078
+  },
+  {
+   "code": "9321",
+   "label": "Actividades de parques de atracciones y parques tematicos",
+   "activeCompanies": 502
+  },
+  {
+   "code": "9329",
+   "label": "Otras actividades recreativas y de esparcimiento n.c.p.",
+   "activeCompanies": 2827
+  },
+  {
+   "code": "9411",
+   "label": null,
+   "activeCompanies": 4019
+  },
+  {
+   "code": "9412",
+   "label": "Actividades de asociaciones profesionales",
+   "activeCompanies": 2629
+  },
+  {
+   "code": "9420",
+   "label": null,
+   "activeCompanies": 92
+  },
+  {
+   "code": "9491",
+   "label": "Actividades de asociaciones religiosas",
+   "activeCompanies": 674
+  },
+  {
+   "code": "9492",
+   "label": null,
+   "activeCompanies": 141
+  },
+  {
+   "code": "9499",
+   "label": "Actividades de otras asociaciones n.c.p.",
+   "activeCompanies": 223741
+  },
+  {
+   "code": "9511",
+   "label": "Mantenimiento y reparacion de computadores y de equipo periferico",
+   "activeCompanies": 1996
+  },
+  {
+   "code": "9512",
+   "label": "Mantenimiento y reparacion de equipos de comunicacion",
+   "activeCompanies": 392
+  },
+  {
+   "code": "9521",
+   "label": "Mantenimiento y reparacion de aparatos electronicos de consumo",
+   "activeCompanies": 218
+  },
+  {
+   "code": "9522",
+   "label": "Mantenimiento y reparacion de aparatos y equipos domesticos y de jardineria",
+   "activeCompanies": 658
+  },
+  {
+   "code": "9523",
+   "label": "Reparacion de calzado y articulos de cuero",
+   "activeCompanies": 20
+  },
+  {
+   "code": "9524",
+   "label": "Reparacion de muebles y accesorios para el hogar",
+   "activeCompanies": 356
+  },
+  {
+   "code": "9529",
+   "label": "Mantenimiento y reparacion de otros efectos personales y enseres domesticos",
+   "activeCompanies": 654
+  },
+  {
+   "code": "9601",
+   "label": "Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel",
+   "activeCompanies": 1442
+  },
+  {
+   "code": "9602",
+   "label": "Peluqueria y otros tratamientos de belleza",
+   "activeCompanies": 4427
+  },
+  {
+   "code": "9603",
+   "label": "Pompas funebres y actividades relacionadas",
+   "activeCompanies": 1403
+  },
+  {
+   "code": "9609",
+   "label": "Otras actividades de servicios personales n.c.p.",
+   "activeCompanies": 5503
+  },
+  {
+   "code": "9610",
+   "label": null,
+   "activeCompanies": 5
+  },
+  {
+   "code": "9700",
+   "label": "Actividades de los hogares individuales como empleadores de personal domestico",
+   "activeCompanies": 177
+  },
+  {
+   "code": "9810",
+   "label": null,
+   "activeCompanies": 47
+  },
+  {
+   "code": "9820",
+   "label": null,
+   "activeCompanies": 70
+  },
+  {
+   "code": "9900",
+   "label": null,
+   "activeCompanies": 202
+  }
+ ]
+}

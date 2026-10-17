@@ -1,7 +1,8 @@
 import { connection } from "next/server";
 import { t, type MessageKey } from "@/i18n";
 import { hasDatabase } from "@/server/env";
-import { loadBridge } from "@/server/lab/bridge";
+import Link from "next/link";
+import { listCampaigns, loadBridge, type NextAction } from "@/server/lab/bridge";
 import { DEFAULT_THRESHOLDS } from "@/server/lab/config";
 import { formatCop } from "@/server/lab/recommendation";
 import { ArmMatrix } from "./_components/arm-matrix";
@@ -14,17 +15,21 @@ const STATE = {
   done: { icon: "✓", cls: "text-done" },
 } as const;
 
-export default async function BridgePage() {
+const UUID = /^[0-9a-f-]{36}$/i;
+
+export default async function BridgePage({ searchParams }: { searchParams: Promise<{ c?: string }> }) {
   await connection();
   if (!hasDatabase()) return <Empty text={t("bridge.noDatabase")} />;
-  const data = await loadBridge();
+  const { c } = await searchParams;
+  const [data, campaigns] = await Promise.all([loadBridge(c && UUID.test(c) ? c : undefined), listCampaigns()]);
   if (!data) return <Empty text={t("bridge.noCampaign")} />;
   const { metrics, campaign } = data;
   const now = new Date();
 
+  const leadsHref = `/leads?c=${campaign.id}`;
   const kpis = [
-    { label: t("bridge.kpiFound"), value: metrics.totals.found.toLocaleString("es-CO") },
-    { label: t("bridge.kpiInProfile"), value: metrics.totals.inProfile.toLocaleString("es-CO") },
+    { label: t("bridge.kpiFound"), value: metrics.totals.found.toLocaleString("es-CO"), href: leadsHref },
+    { label: t("bridge.kpiInProfile"), value: metrics.totals.inProfile.toLocaleString("es-CO"), href: `${leadsHref}&perfil=si` },
     { label: t("bridge.kpiContacted"), value: metrics.totals.contacted.toLocaleString("es-CO") },
     { label: t("bridge.kpiQualified"), value: metrics.totals.qualified.toLocaleString("es-CO") },
     { label: t("bridge.kpiCost"), value: formatCop(metrics.totals.costUsd * campaign.fxCopPerUsd) },
@@ -40,6 +45,21 @@ export default async function BridgePage() {
         <span className="rounded-full border border-line bg-surface px-3 py-1 text-xs text-muted">{t("bridge.viewVariable")}</span>
       </div>
 
+      {campaigns.length > 1 && (
+        <nav aria-label={t("bridge.campaigns")} className="flex flex-wrap gap-2 text-sm">
+          {campaigns.map((x) => (
+            <Link
+              key={x.id}
+              href={`/?c=${x.id}`}
+              aria-current={x.id === campaign.id ? "page" : undefined}
+              className={`rounded-full border px-3 py-1 ${x.id === campaign.id ? "border-ink bg-ink text-chrome-ink" : "border-line bg-surface"}`}
+            >
+              {x.name}
+            </Link>
+          ))}
+        </nav>
+      )}
+
       <section aria-labelledby="rec" className="rounded-[var(--radius)] bg-chrome p-6 text-chrome-ink">
         <h2 id="rec" className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-brand">
           <span aria-hidden className="inline-block size-2 rounded-full bg-brand" />
@@ -50,9 +70,14 @@ export default async function BridgePage() {
 
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-5">
         {kpis.map((k) => (
-          <div key={k.label} className="rounded-[var(--radius)] border border-line bg-surface p-4">
+          <div key={k.label} className="relative rounded-[var(--radius)] border border-line bg-surface p-4 has-[a:hover]:border-ink">
             <dt className="text-xs text-muted">{k.label}</dt>
             <dd className="mt-1 font-display text-2xl font-bold num">{k.value}</dd>
+            {"href" in k && k.href && (
+              <Link href={k.href} className="mt-1 inline-block text-xs font-semibold underline after:absolute after:inset-0">
+                {t("bridge.seeLeads")}
+              </Link>
+            )}
           </div>
         ))}
       </dl>
@@ -62,6 +87,12 @@ export default async function BridgePage() {
           <h2 id="matrix" className="mb-1 px-2 text-base font-semibold">
             {t("bridge.matrix")}
           </h2>
+          {metrics.totals.contacted === 0 && (
+            <p className="mx-2 my-3 rounded-[var(--radius)] border border-line bg-bg p-3 text-sm">
+              <span aria-hidden className="font-bold text-waiting">◌ </span>
+              {t("bridge.matrixEmpty")}
+            </p>
+          )}
           <ArmMatrix metrics={metrics} thompson={data.thompson} fx={campaign.fxCopPerUsd} minContacts={DEFAULT_THRESHOLDS.minMatureContactsForEvidence} />
         </section>
 
@@ -70,9 +101,7 @@ export default async function BridgePage() {
             <h2 id="pending" className="text-xs font-semibold uppercase tracking-wider">
               {t("bridge.pending")}
             </h2>
-            <p className="mt-1 font-display text-lg font-semibold">
-              {data.pendingWave ? t("bridge.reviewWave", { n: data.pendingWave.n }) : t("bridge.noPending")}
-            </p>
+            <NextActionCard action={data.nextAction} leadsHref={leadsHref} />
           </section>
 
           <section aria-labelledby="activity" className="rounded-[var(--radius)] border border-line bg-surface p-4">
@@ -101,6 +130,37 @@ export default async function BridgePage() {
         </div>
       </div>
     </main>
+  );
+}
+
+function NextActionCard({ action, leadsHref }: { action: NextAction; leadsHref: string }) {
+  const title =
+    action.kind === "reviewWave"
+      ? t("bridge.reviewWave", { n: action.n })
+      : action.kind === "composingWave"
+        ? t("bridge.composingWave", { n: action.n })
+        : action.kind === "buildWave"
+          ? t("bridge.buildWave", { n: action.n, count: Math.min(action.available, action.waveSize) })
+          : action.kind === "findLeads"
+            ? t("bridge.findLeads")
+            : t("bridge.noPending");
+  return (
+    <div className="mt-1 space-y-2">
+      <p className="font-display text-lg font-semibold">{title}</p>
+      {action.kind === "buildWave" && (
+        <>
+          <p className="text-sm">{t("bridge.buildWaveHelp", { available: action.available, waveSize: action.waveSize })}</p>
+          <Link href={`${leadsHref}&perfil=si`} className="inline-block rounded-[var(--radius)] bg-ink px-3 py-2 text-sm font-semibold text-chrome-ink">
+            {t("bridge.seeProfileLeads")}
+          </Link>
+        </>
+      )}
+      {action.kind === "findLeads" && (
+        <Link href="/campanas/nueva" className="inline-block rounded-[var(--radius)] bg-ink px-3 py-2 text-sm font-semibold text-chrome-ink">
+          {t("nav.newCampaign")}
+        </Link>
+      )}
+    </div>
   );
 }
 

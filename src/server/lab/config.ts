@@ -47,11 +47,16 @@ export const campaignConfigSchema = z.object({
   description: z.string(),
   city: z.string(),
   ciiu: z.array(z.string().regex(/^\d{4}$/)).min(1),
-  placesQueries: z.array(z.string()).min(1),
+  /** Opcionales: sin llave de Places, el descubrimiento usa solo datos abiertos. */
+  placesQueries: z.array(z.string()).default([]),
+  /** Cámara de comercio del RUES (p. ej. "BOGOTA"). */
+  ruesCamara: z.string().default("BOGOTA"),
   filters: z.object({
     onlyActive: z.boolean().default(true),
     minRenewalYear: z.number().int().optional(),
     excludeKeywords: z.array(z.string()).default([]),
+    /** CIIU amplios que solo entran al perfil si el nombre contiene alguna palabra (sin tildes). */
+    nameKeywordsByCiiu: z.record(z.string(), z.array(z.string())).default({}),
   }),
   waveSize: z.number().int().positive().default(90),
 });
@@ -64,6 +69,16 @@ export const EVENT_CAMPAIGN_CONFIG: CampaignConfig = {
   // 8622 práctica odontológica, 8621 práctica médica sin internación, 9602 tratamientos de belleza
   ciiu: ["8622", "8621", "9602"],
   placesQueries: ["clínica odontológica en Bogotá", "clínica estética en Bogotá"],
-  filters: { onlyActive: true, minRenewalYear: 2025, excludeKeywords: [] },
+  ruesCamara: "BOGOTA",
+  filters: {
+    onlyActive: true,
+    minRenewalYear: 2025,
+    excludeKeywords: ["HOSPITAL", "E.S.E", "ESE ", "EPS", "LIQUIDACION"],
+    // 8621 y 9602 son amplios: solo clínicas estéticas u odontológicas por su nombre.
+    nameKeywordsByCiiu: {
+      "8621": ["ESTETIC", "DERMA", "ODONT", "DENT", "ORTODON", "SONRIS", "PIEL", "LASER", "CIRUGIA PLASTICA", "BELLEZA"],
+      "9602": ["ESTETIC", "DERMA", "PIEL", "LASER", "SPA"],
+    },
+  },
   waveSize: 90,
 };

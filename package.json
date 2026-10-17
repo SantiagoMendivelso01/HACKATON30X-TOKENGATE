@@ -13,7 +13,8 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "db:demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/demo-db.mts"
+    "db:demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/demo-db.mts",
+    "discover": "tsx --env-file=.env.local scripts/discover.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",
@@ -36,6 +37,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5",
     "vitest": "^5.0.5"
   },

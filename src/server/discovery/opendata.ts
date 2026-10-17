@@ -21,6 +21,7 @@ const NATURAL_PERSON = /PERSONA NATURAL|EMPRESARIO INDIVIDUAL|EMPRES[AÁ]RIO EM 
 const soqlString = (s: string) => `'${s.replace(/'/g, "''")}'`;
 
 export interface OpenData {
+  countRues(params: { ciiu: string; camara: string; minRenewalYear?: number }): Promise<number>;
   queryRues(params: { ciiu: string[]; camara: string; minRenewalYear?: number; limit: number }): Promise<RuesRow[]>;
   querySecopByNits(nits: string[]): Promise<SecopRow[]>;
 }
@@ -38,15 +39,28 @@ export class SocrataOpenData implements OpenData {
     return (await res.json()) as T[];
   }
 
-  queryRues({ ciiu, camara, minRenewalYear, limit }: Parameters<OpenData["queryRues"]>[0]) {
-    const where = [
+  private ruesWhere(ciiu: string[], camara: string, minRenewalYear?: number) {
+    return [
       `cod_ciiu_act_econ_pri in (${ciiu.map(soqlString).join(", ")})`,
       `estado_matricula = 'ACTIVA'`,
       `organizacion_juridica != 'PERSONA NATURAL'`,
       `camara_comercio = ${soqlString(camara)}`,
       minRenewalYear ? `ultimo_ano_renovado >= ${soqlString(String(minRenewalYear))}` : null,
-    ].filter(Boolean);
-    return this.get<RuesRow>(RUES_DATASET, `SELECT ${RUES_FIELDS.join(", ")} WHERE ${where.join(" AND ")} ORDER BY fecha_matricula DESC LIMIT ${limit}`);
+    ]
+      .filter(Boolean)
+      .join(" AND ");
+  }
+
+  async countRues({ ciiu, camara, minRenewalYear }: Parameters<OpenData["countRues"]>[0]) {
+    const [row] = await this.get<{ n: string }>(RUES_DATASET, `SELECT count(*) AS n WHERE ${this.ruesWhere([ciiu], camara, minRenewalYear)}`);
+    return Number(row?.n ?? 0);
+  }
+
+  queryRues({ ciiu, camara, minRenewalYear, limit }: Parameters<OpenData["queryRues"]>[0]) {
+    return this.get<RuesRow>(
+      RUES_DATASET,
+      `SELECT ${RUES_FIELDS.join(", ")} WHERE ${this.ruesWhere(ciiu, camara, minRenewalYear)} ORDER BY fecha_matricula DESC LIMIT ${limit}`,
+    );
   }
 
   async querySecopByNits(nits: string[]) {

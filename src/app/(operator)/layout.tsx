@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { t } from "@/i18n";
+import { OperatorNav } from "./_components/operator-nav";
 
 export default function OperatorLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,11 +12,9 @@ export default function OperatorLayout({ children }: { children: React.ReactNode
             <span aria-hidden className="inline-block size-3 rounded-[3px] bg-brand" />
             {t("app.name")}
           </Link>
-          <nav aria-label="Principal" className="text-sm">
-            <Link href="/" aria-current="page" className="rounded-md bg-chrome-2 px-3 py-1.5 font-medium">
-              {t("nav.bridge")}
-            </Link>
-          </nav>
+          <Suspense fallback={null}>
+            <OperatorNav />
+          </Suspense>
           <p className="ml-auto hidden text-xs text-chrome-muted sm:block">{t("app.builtFor")}</p>
         </div>
       </header>

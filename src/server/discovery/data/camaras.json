@@ -1,0 +1,241 @@
+{
+ "generatedAt": "2026-10-17",
+ "sources": [
+  "https://www.datos.gov.co/resource/3kkb-6c2s",
+  "https://www.datos.gov.co/resource/c82u-588k"
+ ],
+ "camaras": [
+  {
+   "name": "BOGOTA",
+   "activeCompanies": 1184548
+  },
+  {
+   "name": "MEDELLIN PARA ANTIOQUIA",
+   "activeCompanies": 318769
+  },
+  {
+   "name": "CALI",
+   "activeCompanies": 243192
+  },
+  {
+   "name": "BARRANQUILLA",
+   "activeCompanies": 219009
+  },
+  {
+   "name": "BUCARAMANGA",
+   "activeCompanies": 159790
+  },
+  {
+   "name": "CARTAGENA",
+   "activeCompanies": 119801
+  },
+  {
+   "name": "VILLAVICENCIO",
+   "activeCompanies": 114163
+  },
+  {
+   "name": "CUCUTA",
+   "activeCompanies": 101330
+  },
+  {
+   "name": "HUILA",
+   "activeCompanies": 79300
+  },
+  {
+   "name": "SANTA MARTA PARA EL MAGDALENA",
+   "activeCompanies": 72502
+  },
+  {
+   "name": "IBAGUE",
+   "activeCompanies": 66842
+  },
+  {
+   "name": "MONTERIA",
+   "activeCompanies": 59812
+  },
+  {
+   "name": "CAUCA",
+   "activeCompanies": 58568
+  },
+  {
+   "name": "FACATATIVA",
+   "activeCompanies": 58330
+  },
+  {
+   "name": "PASTO",
+   "activeCompanies": 54957
+  },
+  {
+   "name": "TUNJA",
+   "activeCompanies": 54887
+  },
+  {
+   "name": "VALLEDUPAR",
+   "activeCompanies": 54441
+  },
+  {
+   "name": "PEREIRA",
+   "activeCompanies": 53840
+  },
+  {
+   "name": "ABURRA SUR",
+   "activeCompanies": 52256
+  },
+  {
+   "name": "MANIZALES",
+   "activeCompanies": 46517
+  },
+  {
+   "name": "ARMENIA",
+   "activeCompanies": 42871
+  },
+  {
+   "name": "CASANARE",
+   "activeCompanies": 42485
+  },
+  {
+   "name": "ORIENTE ANTIOQUENO",
+   "activeCompanies": 40589
+  },
+  {
+   "name": "LA GUAJIRA",
+   "activeCompanies": 39804
+  },
+  {
+   "name": "SINCELEJO",
+   "activeCompanies": 37087
+  },
+  {
+   "name": "PALMIRA",
+   "activeCompanies": 28675
+  },
+  {
+   "name": "BARRANCABERMEJA",
+   "activeCompanies": 27651
+  },
+  {
+   "name": "PUTUMAYO",
+   "activeCompanies": 26872
+  },
+  {
+   "name": "SOACHA",
+   "activeCompanies": 26841
+  },
+  {
+   "name": "URABA",
+   "activeCompanies": 26461
+  },
+  {
+   "name": "DUITAMA",
+   "activeCompanies": 24859
+  },
+  {
+   "name": "SUR Y ORIENTE DEL TOLIMA",
+   "activeCompanies": 24251
+  },
+  {
+   "name": "GIRARDOT",
+   "activeCompanies": 23452
+  },
+  {
+   "name": "CHOCÓ",
+   "activeCompanies": 22769
+  },
+  {
+   "name": "FLORENCIA PARA EL CAQUETA",
+   "activeCompanies": 22171
+  },
+  {
+   "name": "AGUACHICA",
+   "activeCompanies": 20455
+  },
+  {
+   "name": "SOGAMOSO",
+   "activeCompanies": 19683
+  },
+  {
+   "name": "MAGDALENA MEDIO",
+   "activeCompanies": 19660
+  },
+  {
+   "name": "CARTAGO",
+   "activeCompanies": 18317
+  },
+  {
+   "name": "TULUA",
+   "activeCompanies": 17403
+  },
+  {
+   "name": "BUGA",
+   "activeCompanies": 17318
+  },
+  {
+   "name": "BUENAVENTURA",
+   "activeCompanies": 17061
+  },
+  {
+   "name": "MAGANGUE",
+   "activeCompanies": 16850
+  },
+  {
+   "name": "HONDA",
+   "activeCompanies": 15379
+  },
+  {
+   "name": "IPIALES",
+   "activeCompanies": 14637
+  },
+  {
+   "name": "TUMACO",
+   "activeCompanies": 14350
+  },
+  {
+   "name": "LA DORADA",
+   "activeCompanies": 14235
+  },
+  {
+   "name": "DOSQUEBRADAS",
+   "activeCompanies": 11864
+  },
+  {
+   "name": "OCANA",
+   "activeCompanies": 11419
+  },
+  {
+   "name": "SAN ANDRES",
+   "activeCompanies": 11033
+  },
+  {
+   "name": "PIEDEMONTE ARAUCANO",
+   "activeCompanies": 9887
+  },
+  {
+   "name": "ARAUCA",
+   "activeCompanies": 8093
+  },
+  {
+   "name": "SAN JOSE",
+   "activeCompanies": 8012
+  },
+  {
+   "name": "PAMPLONA",
+   "activeCompanies": 6409
+  },
+  {
+   "name": "AMAZONAS",
+   "activeCompanies": 5702
+  },
+  {
+   "name": "SANTA ROSA DE CABAL",
+   "activeCompanies": 4699
+  },
+  {
+   "name": "CHINCHINA",
+   "activeCompanies": 3474
+  },
+  {
+   "name": "SEVILLA",
+   "activeCompanies": 3430
+  }
+ ]
+}

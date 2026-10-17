@@ -3,8 +3,10 @@
 //
 //   pnpm db:demo      → postgres://postgres:postgres@127.0.0.1:54329/postgres
 //
-// Los datos viven en memoria: cada arranque vuelve a sembrar desde cero.
-import { readFileSync } from "node:fs";
+// Los datos se guardan en .demo-db/ (ignorada por git) y sobreviven a los reinicios.
+//   pnpm db:demo -- --reset   → borra y vuelve a sembrar desde cero
+import { existsSync, readFileSync, rmSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 import { PGlite } from "@electric-sql/pglite";
 import { PGLiteSocketServer } from "@electric-sql/pglite-socket";
 import { drizzle } from "drizzle-orm/pglite";
@@ -14,10 +16,19 @@ const PORT = Number(process.env.DEMO_DB_PORT ?? 54329);
 export const DEMO_TOKEN = "DemoDiagnosticoFaro001"; // 22 caracteres, formato de token válido
 const FX = 3900; // TRM de ejemplo para la demo, no la del día
 
-const pg = await PGlite.create();
-const sql = readFileSync(new URL("../src/db/migrations/0000_init.sql", import.meta.url), "utf8");
-for (const stmt of sql.split("--> statement-breakpoint")) if (stmt.trim()) await pg.exec(stmt);
+const DATA_DIR = new URL("../.demo-db/", import.meta.url);
+if (process.argv.includes("--reset") && existsSync(DATA_DIR)) rmSync(DATA_DIR, { recursive: true, force: true });
+const fresh = !existsSync(DATA_DIR);
+const pg = await PGlite.create(fileURLToPath(DATA_DIR));
+if (fresh) {
+  const sql = readFileSync(new URL("../src/db/migrations/0000_init.sql", import.meta.url), "utf8");
+  for (const stmt of sql.split("--> statement-breakpoint")) if (stmt.trim()) await pg.exec(stmt);
+}
 const db = drizzle(pg, { schema });
+
+// Solo se siembra la primera vez (o con --reset).
+seed: {
+if (!fresh) break seed;
 
 // PRNG determinista: la demo es igual en cada arranque.
 let seed = 20261017;
@@ -176,8 +187,12 @@ await db.insert(schema.activityEvent).values([
   { campaignId: campaign.id, kind: "attention", messageKey: "activity.waveReady", params: { n: 2 }, createdAt: ago(5) },
 ]);
 
-const server = new PGLiteSocketServer({ db: pg, port: PORT, host: "127.0.0.1", maxConnections: 10 });
+}
+
+// idleTimeout cierra conexiones huérfanas (p. ej. de un servidor de Next reiniciado) para no agotar el tope.
+const server = new PGLiteSocketServer({ db: pg, port: PORT, host: "127.0.0.1", maxConnections: 50, idleTimeout: 60_000 });
 await server.start();
+console.log(fresh ? "Base DEMO nueva, sembrada con datos de ejemplo." : "Base DEMO existente (usa --reset para sembrar de nuevo).");
 console.log(`Base DEMO lista en postgres://postgres:postgres@127.0.0.1:${PORT}/postgres`);
 console.log(`Puente de mando: http://localhost:3000/   Diagnóstico: http://localhost:3000/d/${DEMO_TOKEN}`);
 

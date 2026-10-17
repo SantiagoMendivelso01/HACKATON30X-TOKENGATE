@@ -28,6 +28,8 @@ pnpm dev       # terminal 2
 | `pnpm typecheck` / `pnpm lint` | TypeScript y ESLint |
 | `pnpm db:generate` | Nueva migración desde `src/db/schema.ts` |
 | `pnpm db:demo` | Base local de demo con datos de ejemplo |
+| `pnpm discover` | Vuelve a correr el descubrimiento RUES + SECOP de una campaña (`-- --campaign <id>`; por defecto la más reciente) |
+| `node scripts/build-catalogs.mts` | Regenera los catálogos de CIIU y cámaras desde datos.gov.co |
 
 Stack (ADR-004): Next.js 16 (App Router, sin `cacheComponents`), Drizzle + Postgres (Supabase), Zod, Claude Sonnet 5.5 / Haiku 5.5, Brevo, Dapta, Trigger.dev.
 
@@ -40,6 +42,9 @@ Stack (ADR-004): Next.js 16 (App Router, sin `cacheComponents`), Drizzle + Postg
 - Webhook `/api/webhooks/dapta`: secreto + IPs, payload crudo, idempotente por `call_id`, correlación por `faro_attempt_id` o número + ventana; si no cuadra, ambiguo.
 - Puente de mando (`/`) leyendo la base; catálogo ES y tokens de tema; páginas legales en borrador.
 - Diagnóstico público `/d/[token]` (celular primero) con "Llámenme ahora": límites por enlace (2/día), IP (3/hora) y número (2/día), exclusión, consentimiento auditado, cumplimiento con D53 y flow A de Dapta. El intento queda sin confirmar hasta el webhook y nunca se reintenta solo.
+
+- **Nueva campaña** (`/campanas/nueva`, D25): descripción libre → Claude propone CIIU, cámara, palabras clave y búsquedas de Places (validados contra los catálogos) → el operador edita → vista previa con conteos del RUES, contactables estimados por muestra con SECOP y costo → crear y descubrir.
+- Descubrimiento real (`src/server/discovery/discover.ts`): RUES por CIIU → SECOP por NIT → deduplicación → perfil → señales y hechos con licencia. Primera corrida (17-oct-2026): 4.182 empresas en el RUES, 287 contactables, **19 del perfil estricto**.
 
 **Pendiente (siguientes issues):**
 1. Prueba técnica de Dapta → payload real en `fixtures/dapta/` y ajustar `parseDaptaWebhook` (el esquema actual es provisional).

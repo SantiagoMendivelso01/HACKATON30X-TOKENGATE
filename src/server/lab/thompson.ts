@@ -110,3 +110,17 @@ export function applyFloor(shares: Record<string, number>, floor: number): Recor
 export function uniformMix(arms: ArmKey[]): Record<string, number> {
   return Object.fromEntries(arms.map((a) => [armId(a), 1 / arms.length]));
 }
+
+/**
+ * Plan de la próxima oleada (D46): sin resultados maduros no hay nada que aprender, así que el
+ * reparto es uniforme entre los brazos activos (oleada 1). Con resultados maduros, Thompson.
+ */
+export function nextWavePlan(arms: ArmEvidence[], weights: Weights, thresholds: Thresholds, rng: Rng): ThompsonResult {
+  const total = arms.reduce((s, a) => s + a.matureContacts, 0);
+  if (total > 0) return thompson(arms, weights, thresholds, rng);
+  const active = arms.filter((a) => a.active).map((a) => a.arm);
+  const mix = uniformMix(active);
+  const pBest = Object.fromEntries(arms.map((a) => [armId(a.arm), a.active && active.length ? 1 / active.length : 0]));
+  for (const a of arms) mix[armId(a.arm)] ??= 0;
+  return { pBest, mix, turnedOff: [], leader: null, evidence: "insufficient", matureContactsTotal: 0 };
+}
