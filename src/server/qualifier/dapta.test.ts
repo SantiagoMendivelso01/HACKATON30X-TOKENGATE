@@ -78,3 +78,12 @@ describe("FakeQualifier", () => {
     expect(q.calls).toHaveLength(1);
   });
 });
+
+describe("DaptaQualifier sin configurar", () => {
+  it("sin URL de flow rechaza sin intentar la red (la llamada seguro no salió)", async () => {
+    const { DaptaQualifier } = await import("./dapta");
+    const q = new DaptaQualifier({ callNow: "", enqueue: "" });
+    const r = await q.callNow({ attemptId: "a", phoneE164: "+573001112233", vars: { faro_attempt_id: "a", brand: "Faro", offer: "x", dossier_summary: "", opening_check: "requested", language: "es-CO" } });
+    expect(r).toEqual({ accepted: false, raw: { error: "dapta_flow_url_not_configured" } });
+  });
+});

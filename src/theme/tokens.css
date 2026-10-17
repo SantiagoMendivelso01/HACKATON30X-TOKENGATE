@@ -1,30 +1,48 @@
-/* Tokens de tema (D31, D49). Todo color y tipografía sale de aquí para poder cambiar al tema
-   "instrumento de medición" si los organizadores no autorizan la marca de Dapta.
-   TODO (persona C): ajustar la paleta con los colores del producto público de Dapta. */
+/* Tema "módulo de Dapta" (D31, D49): paleta y tipografía del sitio público de Dapta
+   (dapta.ai, revisado el 16-oct-2026): negro, acento lima #CBE850, DM Sans + Poppins.
+   Sin logo de Dapta; siempre con el rótulo "Faro, construido para Dapta (proyecto de hackathon)".
+   Marco oscuro y contenido claro: D31 descartó la sala de control oscura porque se lee mal proyectada.
+   Todo color y tipografía sale de aquí: [data-theme="instrument"] es el plan B si no autorizan la marca. */
 :root {
-  --brand: #5b3df5;
-  --brand-ink: #ffffff;
-  --bg: #f7f7fb;
-  --surface: #ffffff;
-  --ink: #16151c;
-  --ink-muted: #5d5b6a;
-  --line: #e3e2ea;
+  /* Acento de marca: solo como relleno (botones, barras). Nunca como texto sobre fondo claro. */
+  --brand: #cbe850;
+  --brand-ink: #1a1a1c;
+  --brand-soft: #f1f8d2;
 
-  /* Color reservado para estados; nunca decorativo (ADR-005). */
+  /* Marco (barra superior, tarjeta protagonista) */
+  --chrome: #0b0b0c;
+  --chrome-2: #1a1a1c;
+  --chrome-line: #343437;
+  --chrome-ink: #ffffff;
+  --chrome-muted: rgba(255, 255, 255, 0.64);
+
+  /* Contenido */
+  --bg: #f4f4f1;
+  --surface: #ffffff;
+  --ink: #1a1a1c;
+  --ink-muted: #5f5f66;
+  --line: #e2e2dd;
+
+  /* Color reservado para estados; siempre acompañado de icono y texto (ADR-005). */
   --state-working: #2563eb;
   --state-waiting: #a16207;
-  --state-attention: #b91c1c;
+  --state-attention: #c2410c;
   --state-done: #15803d;
   --state-off: #6b7280;
 
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-poppins), var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --radius: 10px;
 }
 
+/* Plan B "instrumento de medición": misma estructura, sin la marca de Dapta. */
 [data-theme="instrument"] {
   --brand: #111827;
-  --bg: #fafaf9;
+  --brand-ink: #ffffff;
+  --brand-soft: #e5e7eb;
+  --chrome: #111827;
+  --chrome-2: #1f2937;
 }
 
 /* Números tabulares en todo el tablero. */

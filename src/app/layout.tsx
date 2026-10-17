@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
+import { DM_Sans, Poppins } from "next/font/google";
 import { t } from "@/i18n";
 import "./globals.css";
+
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-dm-sans", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["600", "700"], variable: "--font-poppins", display: "swap" });
 
 export const metadata: Metadata = {
   title: t("app.name"),
@@ -9,11 +13,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className="h-full antialiased">
-      <body className="min-h-full flex flex-col">
-        {children}
-        <footer className="mt-auto px-6 py-3 text-xs text-muted border-t border-line">{t("app.builtFor")}</footer>
-      </body>
+    <html lang="es" className={`${dmSans.variable} ${poppins.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

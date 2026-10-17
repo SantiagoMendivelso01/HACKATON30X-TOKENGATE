@@ -13,11 +13,21 @@ pnpm db:migrate              # aplica src/db/migrations a DATABASE_URL
 pnpm dev
 ```
 
+### Ver la app sin Supabase (base de demo)
+
+```bash
+pnpm db:demo   # terminal 1: Postgres embebido (PGlite) en el puerto 54329, con datos de ejemplo
+pnpm dev       # terminal 2
+```
+
+`.env.local` debe tener `DATABASE_URL=postgres://postgres:postgres@127.0.0.1:54329/postgres` y `DATABASE_POOL_MAX=1`. Abre http://localhost:3000 (puente de mando) y http://localhost:3000/d/DemoDiagnosticoFaro001 (diagnóstico). Los datos son ficticios y viven en memoria: cada arranque los vuelve a sembrar. Sin URLs de Dapta configuradas, "Llámenme ahora" no llama a nadie: registra el intento como fallido.
+
 | Script | Qué hace |
 |---|---|
 | `pnpm test` | Tests unitarios (Vitest) |
 | `pnpm typecheck` / `pnpm lint` | TypeScript y ESLint |
 | `pnpm db:generate` | Nueva migración desde `src/db/schema.ts` |
+| `pnpm db:demo` | Base local de demo con datos de ejemplo |
 
 Stack (ADR-004): Next.js 16 (App Router, sin `cacheComponents`), Drizzle + Postgres (Supabase), Zod, Claude Sonnet 5.5 / Haiku 5.5, Brevo, Dapta, Trigger.dev.
 

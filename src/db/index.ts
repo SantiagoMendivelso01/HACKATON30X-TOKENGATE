@@ -7,7 +7,8 @@ let instance: ReturnType<typeof create> | null = null;
 
 function create() {
   // prepare: false porque el pooler de Supabase (modo transacción) no admite sentencias preparadas.
-  const client = postgres(env().DATABASE_URL, { prepare: false, max: 5 });
+  // La base de demo (PGlite) corta conexiones abiertas en paralelo: ahí DATABASE_POOL_MAX=1.
+  const client = postgres(env().DATABASE_URL, { prepare: false, max: env().DATABASE_POOL_MAX });
   return drizzle(client, { schema });
 }
 

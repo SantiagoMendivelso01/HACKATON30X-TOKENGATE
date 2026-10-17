@@ -95,7 +95,8 @@ export class DaptaQualifier implements Qualifier {
   constructor(private urls: { callNow: string; enqueue: string }) {}
 
   private async post(url: string, input: CallRequest) {
-    if (!url) throw new Error("URL de Public Route de Dapta sin configurar");
+    // Sin URL la llamada seguro no sale: es un rechazo, no una incertidumbre.
+    if (!url) return { accepted: false, raw: { error: "dapta_flow_url_not_configured" } };
     const res = await fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },

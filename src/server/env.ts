@@ -9,6 +9,8 @@ const list = z
 
 const schema = z.object({
   DATABASE_URL: z.string().min(1),
+  // Vacío (como en .env.example) cuenta como no definido.
+  DATABASE_POOL_MAX: z.preprocess((v) => (v === "" ? undefined : v), z.coerce.number().int().positive().default(5)),
   APP_URL: z.string().url().default("http://localhost:3000"),
   OPERATOR_EMAILS: list,
   ANTHROPIC_API_KEY: z.string().optional(),

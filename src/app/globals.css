@@ -4,6 +4,12 @@
 @theme inline {
   --color-brand: var(--brand);
   --color-brand-ink: var(--brand-ink);
+  --color-brand-soft: var(--brand-soft);
+  --color-chrome: var(--chrome);
+  --color-chrome-2: var(--chrome-2);
+  --color-chrome-line: var(--chrome-line);
+  --color-chrome-ink: var(--chrome-ink);
+  --color-chrome-muted: var(--chrome-muted);
   --color-bg: var(--bg);
   --color-surface: var(--surface);
   --color-ink: var(--ink);
@@ -15,11 +21,24 @@
   --color-done: var(--state-done);
   --color-off: var(--state-off);
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
+  --radius-card: var(--radius);
 }
 
 body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 3px solid var(--state-working);
+  outline-offset: 2px;
 }

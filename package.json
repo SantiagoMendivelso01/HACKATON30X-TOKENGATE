@@ -12,7 +12,8 @@
     "test:watch": "vitest",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio"
+    "db:studio": "drizzle-kit studio",
+    "db:demo": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/demo-db.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.135.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@electric-sql/pglite": "^0.5.10",
+    "@electric-sql/pglite-socket": "^0.2.13",
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^22.20.5",
     "@types/react": "^19",
