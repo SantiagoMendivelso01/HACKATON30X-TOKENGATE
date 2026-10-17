@@ -6,7 +6,9 @@ import { listCampaigns, loadBridge, type BridgeData, type NextAction } from "@/s
 import { DEFAULT_THRESHOLDS } from "@/server/lab/config";
 import { formatCop } from "@/server/lab/recommendation";
 import { ArmMatrix } from "./_components/arm-matrix";
+import { checkCampaignDeletion } from "@/server/campaigns";
 import { CampaignSwitcher } from "./_components/campaign-switcher";
+import { DeleteCampaign } from "./_components/delete-campaign";
 import { Help } from "./_components/help";
 import { ProgressSteps } from "./_components/progress-steps";
 import { relativeTime } from "./_components/relative-time";
@@ -31,6 +33,7 @@ export default async function BridgePage({ searchParams }: { searchParams: Promi
   const [data, campaigns] = await Promise.all([loadBridge(c && UUID.test(c) ? c : undefined), listCampaigns()]);
   if (!data) return <Empty text={t("bridge.noCampaign")} cta />;
   const { metrics, campaign } = data;
+  const deletion = await checkCampaignDeletion(campaign.id);
   const now = new Date();
   const leadsHref = `/leads?c=${campaign.id}`;
   const noContacts = metrics.totals.contacted === 0;
@@ -55,6 +58,7 @@ export default async function BridgePage({ searchParams }: { searchParams: Promi
           <Link href="/campanas/nueva" className="rounded-[var(--radius)] border border-line bg-surface px-3 py-1.5 text-sm font-medium">
             + {t("nav.newCampaign")}
           </Link>
+          <DeleteCampaign campaignId={campaign.id} campaignName={campaign.name} leads={deletion.leads} deletable={deletion.deletable} />
         </div>
       </header>
 

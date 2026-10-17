@@ -86,6 +86,23 @@ export const es = {
   common: {
     loading: "Cargando…",
   },
+  deleteCampaign: {
+    button: "Borrar campaña",
+    title: "¿Borrar esta campaña?",
+    body: "Se borrará «{name}» con {leads}, sus hechos, señales, costos y registro de actividad.",
+    leadsOne: "1 lead",
+    leadsMany: "{n} leads",
+    irreversible: "Esta acción no se puede deshacer.",
+    typeToConfirm: "Escribe «borrar» para confirmar",
+    cancel: "Cancelar",
+    confirm: "Borrar definitivamente",
+    deleting: "Borrando…",
+    blockedShort: "No se puede borrar: ya hubo contactos",
+    blocked: "Esta campaña ya contactó a empresas o registró autorizaciones. Esa evidencia se conserva por cumplimiento (Ley 2300 y auditoría del consentimiento).",
+    error_not_found: "La campaña ya no existe.",
+    error_has_contacts: "No se puede borrar: ya hubo contactos o autorizaciones, y esa evidencia se conserva.",
+    error_not_confirmed: "Escribe «borrar» para confirmar.",
+  },
   newCampaign: {
     title: "Nueva campaña",
     subtitle: "Describe a quién buscas; Faro lo traduce a filtros sobre el registro mercantil y te muestra cuántas empresas hay antes de buscar.",
