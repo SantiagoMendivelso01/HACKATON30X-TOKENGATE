@@ -1,0 +1,33 @@
+/* Tokens de tema (D31, D49). Todo color y tipografía sale de aquí para poder cambiar al tema
+   "instrumento de medición" si los organizadores no autorizan la marca de Dapta.
+   TODO (persona C): ajustar la paleta con los colores del producto público de Dapta. */
+:root {
+  --brand: #5b3df5;
+  --brand-ink: #ffffff;
+  --bg: #f7f7fb;
+  --surface: #ffffff;
+  --ink: #16151c;
+  --ink-muted: #5d5b6a;
+  --line: #e3e2ea;
+
+  /* Color reservado para estados; nunca decorativo (ADR-005). */
+  --state-working: #2563eb;
+  --state-waiting: #a16207;
+  --state-attention: #b91c1c;
+  --state-done: #15803d;
+  --state-off: #6b7280;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --radius: 10px;
+}
+
+[data-theme="instrument"] {
+  --brand: #111827;
+  --bg: #fafaf9;
+}
+
+/* Números tabulares en todo el tablero. */
+.num {
+  font-variant-numeric: tabular-nums;
+}
