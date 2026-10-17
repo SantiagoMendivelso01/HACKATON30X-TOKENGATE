@@ -4,6 +4,8 @@
 
 Faro busca clientes para pymes en fuentes públicas (SECOP II + RUES y Google Places), los contacta respetando la ley, deja que el agente de Dapta los califique y dice dónde buscar y cómo contactar al menor costo por lead calificado. Decisiones en [`docs/grillme/`](docs/grillme/02-definicion-producto.md) (los ADR mandan; la sesión 5 manda sobre los ADR).
 
+**Estado de la versión 1, pendientes y decisiones abiertas:** [docs/v1-estado-y-decisiones.md](docs/v1-estado-y-decisiones.md).
+
 ## Arranque
 
 ```bash
