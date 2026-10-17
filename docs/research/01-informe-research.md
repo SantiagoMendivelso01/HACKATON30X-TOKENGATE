@@ -1,6 +1,6 @@
 # Informe de research — Hackathon Dapta (Fase A)
 
-**Fecha de corte:** 16-oct-2026 · **Estado:** borrador para la sesión 1 · **Autor:** equipo + Claude
+**Fecha de corte:** 16-oct-2026 · **Estado:** borrador para la sesión 1 · **Autor:** equipo
 
 **Convención.** **[V]** = verificado en la fuente primaria enlazada. **[NC]** = no confirmado: viene de terceros o es una inferencia nuestra. **[H]** = hipótesis nuestra, pendiente de validar. Las cifras [NC] **no** van al pitch sin verificarlas antes.
 
