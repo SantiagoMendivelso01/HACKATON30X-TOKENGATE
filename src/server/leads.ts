@@ -15,6 +15,10 @@ async function campaignOrLatest(campaignId?: string) {
   return c ?? null;
 }
 
+export async function listCampaignsBrief() {
+  return db().select({ id: schema.campaign.id, name: schema.campaign.name }).from(schema.campaign).orderBy(desc(schema.campaign.createdAt));
+}
+
 export async function listLeads(opts: { campaignId?: string; profile: ProfileFilter; q?: string }) {
   const campaign = await campaignOrLatest(opts.campaignId);
   if (!campaign) return null;
@@ -43,7 +47,12 @@ export async function listLeads(opts: { campaignId?: string; profile: ProfileFil
   }));
   const counts = { todos: rows.length, si: rows.filter((r) => r.inProfile).length, no: rows.filter((r) => !r.inProfile).length };
   const filtered = opts.profile === "todos" ? rows : rows.filter((r) => r.inProfile === (opts.profile === "si"));
-  return { campaign: { id: campaign.id, name: campaign.name }, rows: filtered, counts };
+  const summary = {
+    withEmail: filtered.filter((r) => r.email).length,
+    withPhone: filtered.filter((r) => r.phoneE164).length,
+    withSignals: filtered.filter((r) => r.signals.length).length,
+  };
+  return { campaign: { id: campaign.id, name: campaign.name }, rows: filtered, counts, summary };
 }
 
 export async function getLead(id: string) {

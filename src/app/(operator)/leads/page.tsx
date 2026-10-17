@@ -2,7 +2,11 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { t } from "@/i18n";
 import { hasDatabase } from "@/server/env";
-import { listLeads, type ProfileFilter } from "@/server/leads";
+import { listLeads, listCampaignsBrief, type ProfileFilter } from "@/server/leads";
+import { CampaignSwitcher } from "../_components/campaign-switcher";
+import { Help } from "../_components/help";
+
+export const metadata = { title: `${t("leads.title")} · ${t("app.name")}` };
 
 const UUID = /^[0-9a-f-]{36}$/i;
 const SIGNAL_LABEL: Record<string, string> = {
@@ -15,7 +19,7 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
   if (!hasDatabase()) return <p className="p-10 text-center">{t("bridge.noDatabase")}</p>;
   const sp = await searchParams;
   const profile: ProfileFilter = sp.perfil === "si" || sp.perfil === "no" ? sp.perfil : "todos";
-  const data = await listLeads({ campaignId: sp.c && UUID.test(sp.c) ? sp.c : undefined, profile, q: sp.q });
+  const [data, campaigns] = await Promise.all([listLeads({ campaignId: sp.c && UUID.test(sp.c) ? sp.c : undefined, profile, q: sp.q }), listCampaignsBrief()]);
   if (!data) return <p className="p-10 text-center">{t("leads.noCampaign")}</p>;
 
   const href = (perfil: ProfileFilter) => `/leads?c=${data.campaign.id}${perfil === "todos" ? "" : `&perfil=${perfil}`}${sp.q ? `&q=${encodeURIComponent(sp.q)}` : ""}`;
@@ -27,14 +31,17 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
 
   return (
     <main className="mx-auto w-full max-w-7xl space-y-5 px-6 py-6">
-      <div>
-        <p className="text-xs uppercase tracking-wider text-muted">
-          <Link href={`/?c=${data.campaign.id}`} className="underline">
-            {data.campaign.name}
-          </Link>
-        </p>
-        <h1 className="text-2xl font-bold">{t("leads.title")}</h1>
-      </div>
+      <header className="flex flex-wrap items-end justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-xs uppercase tracking-wider text-muted">
+            <Link href={`/?c=${data.campaign.id}`} className="underline">
+              {data.campaign.name}
+            </Link>
+          </p>
+          <h1 className="text-2xl font-bold">{t("leads.title")}</h1>
+        </div>
+        {campaigns.length > 1 && <CampaignSwitcher campaigns={campaigns} current={data.campaign.id} basePath="/leads" />}
+      </header>
 
       <div className="flex flex-wrap items-center justify-between gap-3">
         <nav aria-label={t("leads.title")} className="flex flex-wrap gap-2 text-sm">
@@ -63,6 +70,10 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
         </form>
       </div>
 
+      <p className="text-sm text-muted num">
+        {t("leads.summary", { total: data.rows.length, email: data.summary.withEmail, phone: data.summary.withPhone, signals: data.summary.withSignals })}
+      </p>
+
       <div className="overflow-x-auto rounded-[var(--radius)] border border-line bg-surface">
         <table className="w-full min-w-[900px] text-sm">
           <thead>
@@ -71,15 +82,19 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
               <th className="px-4 py-3 font-medium">{t("leads.colActivity")}</th>
               <th className="px-4 py-3 font-medium">{t("leads.colContact")}</th>
               <th className="px-4 py-3 font-medium">{t("leads.colSource")}</th>
-              <th className="px-4 py-3 text-right font-medium">{t("leads.colFit")}</th>
+              <th className="px-4 py-3 font-medium">
+                <span className="flex items-center gap-1">
+                  {t("leads.colFit")} <Help text={t("help.fit")} />
+                </span>
+              </th>
               <th className="px-4 py-3 font-medium">{t("leads.colProfile")}</th>
             </tr>
           </thead>
           <tbody>
             {data.rows.map((l) => (
-              <tr key={l.id} className="border-b border-line align-top last:border-0 hover:bg-bg">
+              <tr key={l.id} className="relative border-b border-line align-top last:border-0 hover:bg-bg">
                 <td className="px-4 py-3">
-                  <Link href={`/leads/${l.id}`} className="font-semibold underline-offset-2 hover:underline">
+                  <Link href={`/leads/${l.id}`} className="font-semibold underline-offset-2 after:absolute after:inset-0 hover:underline">
                     {l.name}
                   </Link>
                   {l.nit && <p className="text-xs text-muted num">NIT {l.nit}</p>}
@@ -102,7 +117,14 @@ export default async function LeadsPage({ searchParams }: { searchParams: Promis
                   {!l.email && !l.phoneE164 && <p className="text-muted">{t("leads.noContact")}</p>}
                 </td>
                 <td className="px-4 py-3 text-xs">{l.foundBy.map((s) => t(`source.${s}`)).join(" + ")}</td>
-                <td className="px-4 py-3 text-right font-semibold num">{l.fitScore ?? "—"}</td>
+                <td className="px-4 py-3">
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-16 rounded-full bg-bg" aria-hidden>
+                      <div className="h-1.5 rounded-full bg-ink" style={{ width: `${l.fitScore ?? 0}%` }} />
+                    </div>
+                    <span className="text-xs font-semibold num">{l.fitScore ?? "—"}</span>
+                  </div>
+                </td>
                 <td className="px-4 py-3 text-xs">
                   <p className={`font-semibold ${l.inProfile ? "text-done" : "text-off"}`}>
                     <span aria-hidden>{l.inProfile ? "✓ " : "— "}</span>

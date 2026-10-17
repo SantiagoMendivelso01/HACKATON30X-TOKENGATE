@@ -60,7 +60,7 @@ describe("profileMatch", () => {
     expect(profileMatch("SONRISAS SAS", "8622", true, EVENT_CAMPAIGN_CONFIG).ok).toBe(true);
     expect(profileMatch("CENTRO MÉDICO ESTÉTICO LUZ SAS", "8621", true, EVENT_CAMPAIGN_CONFIG)).toMatchObject({ ok: true });
     expect(profileMatch("IPS SALUD TOTAL SAS", "8621", true, EVENT_CAMPAIGN_CONFIG).ok).toBe(false);
-    expect(profileMatch("HOSPITAL DENTAL SAS", "8622", true, EVENT_CAMPAIGN_CONFIG).reason).toContain("excluida");
+    expect(profileMatch("HOSPITAL DENTAL SAS", "8622", true, EVENT_CAMPAIGN_CONFIG).reason).toContain("Excluida");
     expect(profileMatch("SONRISAS SAS", "8622", false, EVENT_CAMPAIGN_CONFIG).ok).toBe(false);
   });
 });
@@ -96,7 +96,7 @@ describe("runDiscovery", () => {
 
     const ips = store.saved.find((l) => l.merged.persist.nit === "903333333")!;
     expect(ips.inProfile).toBe(false);
-    expect(ips.profileReason).toContain("sin palabra clave");
+    expect(ips.profileReason).toContain("no indica el perfil");
 
     expect(store.events).toEqual(["activity.discoveryStarted", "activity.discoveryFinished"]);
     // El evento "trabajando" se cierra al terminar: nunca queda colgado.

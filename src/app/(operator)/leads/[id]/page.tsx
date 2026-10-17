@@ -8,6 +8,8 @@ import { formatCop } from "@/server/lab/recommendation";
 
 const UUID = /^[0-9a-f-]{36}$/i;
 
+export const metadata = { title: `${t("leads.detailTitle")} · ${t("app.name")}` };
+
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-3 rounded-[var(--radius)] border border-line bg-surface p-5">

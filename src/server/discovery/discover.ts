@@ -70,19 +70,19 @@ const norm = (s: string) => stripAccents(s).toUpperCase();
 
 /** Regla de perfil (ICP): persona jurídica, CIIU del perfil y, si el CIIU es amplio, nombre con palabra clave. */
 export function profileMatch(name: string, ciiu: string | null, isLegalEntity: boolean, cfg: CampaignConfig): { ok: boolean; reason: string } {
-  if (!isLegalEntity) return { ok: false, reason: "persona natural" };
+  if (!isLegalEntity) return { ok: false, reason: "Es persona natural: Faro solo contacta empresas" };
   const n = norm(name);
   const excluded = cfg.filters.excludeKeywords.find((k) => n.includes(norm(k)));
-  if (excluded) return { ok: false, reason: `excluida por "${excluded}"` };
-  if (!ciiu) return { ok: false, reason: "sin CIIU" };
-  if (!cfg.ciiu.includes(ciiu)) return { ok: false, reason: `CIIU ${ciiu} fuera del perfil` };
+  if (excluded) return { ok: false, reason: `Excluida: el nombre incluye «${excluded}»` };
+  if (!ciiu) return { ok: false, reason: "Sin actividad económica registrada" };
+  if (!cfg.ciiu.includes(ciiu)) return { ok: false, reason: `Su actividad (CIIU ${ciiu}) no es del perfil` };
   const kws = cfg.filters.nameKeywordsByCiiu[ciiu];
   if (kws?.length) {
     const hit = kws.find((k) => n.includes(norm(k)));
-    if (!hit) return { ok: false, reason: `CIIU ${ciiu} sin palabra clave en el nombre` };
-    return { ok: true, reason: `CIIU ${ciiu} + "${hit}"` };
+    if (!hit) return { ok: false, reason: `La actividad ${ciiu} es amplia y el nombre no indica el perfil` };
+    return { ok: true, reason: `Actividad ${ciiu} y el nombre incluye «${hit}»` };
   }
-  return { ok: true, reason: `CIIU ${ciiu}` };
+  return { ok: true, reason: `Su actividad (CIIU ${ciiu}) es del perfil` };
 }
 
 export function fitScore(lead: MergedLead["persist"], inProfile: boolean, renewalYear: number | null, currentYear: number): number {

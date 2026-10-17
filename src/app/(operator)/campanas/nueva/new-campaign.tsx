@@ -41,6 +41,8 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState<"propose" | "preview" | "create" | null>(null);
   const [, startTransition] = useTransition();
+  const [version, setVersion] = useState(0);
+  const examples = [t("newCampaign.example1"), t("newCampaign.example2"), t("newCampaign.example3"), t("newCampaign.example4")];
 
   const update = (fn: (c: CampaignConfig) => CampaignConfig) => {
     setConfig((c) => (c ? fn(c) : c));
@@ -53,26 +55,37 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
     startTransition(async () => {
       const r = await proposeAction(description);
       setBusy(null);
+      setVersion((v) => v + 1);
+      setPreview(null);
       if (r.ok && r.result.config) {
         setProposal(r.result);
         setLlmError(null);
         setConfig(r.result.config);
         setName(r.result.summary ?? "");
+        // La vista previa sale sola: es gratis (datos abiertos) y es lo que el operador quiere ver.
+        runPreview(r.result.config);
       } else {
         setProposal(r.ok ? r.result : null);
         setLlmError(r.ok ? t("newCampaign.invalidConfig") : r.reason);
         setConfig((c) => c ?? emptyConfig(description));
       }
-      setPreview(null);
     });
   }
 
-  function runPreview() {
-    if (!config?.ciiu.length) return setError(t("newCampaign.invalidConfig"));
+  function startManual() {
+    setProposal(null);
+    setLlmError(null);
+    setConfig(emptyConfig(description));
+    setVersion((v) => v + 1);
+    setPreview(null);
+  }
+
+  function runPreview(cfg: CampaignConfig | null = config) {
+    if (!cfg?.ciiu.length) return setError(t("newCampaign.invalidConfig"));
     setBusy("preview");
     setError(null);
     startTransition(async () => {
-      const r = await previewAction(config);
+      const r = await previewAction(cfg);
       setBusy(null);
       if (r.ok) setPreview(r.preview);
       else setError(t("newCampaign.error", { message: r.reason }));
@@ -108,7 +121,7 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
     <div className="space-y-6">
       {/* 1. Describir */}
       <section className="space-y-3 rounded-[var(--radius)] border border-line bg-surface p-5">
-        <h2 className="text-lg font-bold">{t("newCampaign.step1")}</h2>
+        <StepHeader n={1} title={t("newCampaign.step1")} state={config ? "done" : "current"} />
         <label htmlFor="desc" className="block text-sm font-medium">
           {t("newCampaign.descriptionLabel")}
         </label>
@@ -117,12 +130,29 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
           rows={3}
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && (e.ctrlKey || e.metaKey) && description.trim().length >= 10 && !busy) propose();
+          }}
           placeholder={t("newCampaign.descriptionPlaceholder")}
           className={inputCls}
         />
-        <button type="button" onClick={propose} disabled={busy !== null || description.trim().length < 10} className={btnPrimary}>
-          {busy === "propose" ? t("newCampaign.proposing") : t("newCampaign.propose")}
-        </button>
+        <div className="flex flex-wrap items-center gap-2 text-xs">
+          <span className="text-muted">{t("newCampaign.examples")}</span>
+          {examples.map((ex) => (
+            <button key={ex} type="button" onClick={() => setDescription(ex)} className="rounded-full border border-line bg-bg px-3 py-1 hover:border-ink">
+              {ex}
+            </button>
+          ))}
+        </div>
+        <div className="flex flex-wrap items-center gap-3">
+          <button type="button" onClick={propose} disabled={busy !== null || description.trim().length < 10} className={btnPrimary}>
+            {busy === "propose" ? t("newCampaign.proposing") : t("newCampaign.propose")}
+          </button>
+          <span className="text-xs text-muted">{t("newCampaign.shortcut")}</span>
+          <button type="button" onClick={startManual} disabled={busy !== null} className="ml-auto text-sm underline">
+            {t("newCampaign.manual")}
+          </button>
+        </div>
         <div role="status" aria-live="polite" className="space-y-1 text-sm">
           {llmError && <p className="text-attention">! {t("newCampaign.llmUnavailable", { reason: llmError })}</p>}
           {proposal?.summary && (
@@ -137,8 +167,8 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
       {config && (
         <>
           {/* 2. Ajustar */}
-          <section className="space-y-5 rounded-[var(--radius)] border border-line bg-surface p-5">
-            <h2 className="text-lg font-bold">{t("newCampaign.step2")}</h2>
+          <section key={version} className="space-y-5 rounded-[var(--radius)] border border-line bg-surface p-5">
+            <StepHeader n={2} title={t("newCampaign.step2")} state="current" />
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-1 text-sm">
                 <span className="font-medium">{t("newCampaign.city")}</span>
@@ -225,6 +255,7 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
               </label>
               <label className="space-y-1 text-sm">
                 <span className="font-medium">{t("newCampaign.placesQueries")}</span>
+                <span className="block text-xs text-muted">{t("newCampaign.placesHelp")}</span>
                 <textarea
                   rows={3}
                   className={inputCls}
@@ -256,10 +287,12 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
 
           {/* 3. Vista previa */}
           <section className="space-y-3 rounded-[var(--radius)] border border-line bg-surface p-5">
-            <h2 className="text-lg font-bold">{t("newCampaign.step3")}</h2>
-            <button type="button" onClick={runPreview} disabled={busy !== null} className={btnDark}>
-              {busy === "preview" ? t("newCampaign.previewing") : t("newCampaign.preview")}
-            </button>
+            <StepHeader n={3} title={t("newCampaign.step3")} state={preview ? "done" : "current"} />
+            {(!preview || busy === "preview") && (
+              <button type="button" onClick={() => runPreview()} disabled={busy !== null} className={btnDark}>
+                {busy === "preview" ? t("newCampaign.previewing") : t("newCampaign.preview")}
+              </button>
+            )}
             {preview && (
               <div className="space-y-3">
                 <div className="overflow-x-auto">
@@ -313,7 +346,7 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
 
           {/* 4. Lanzar */}
           <section className="space-y-3 rounded-[var(--radius)] border-2 border-ink bg-brand-soft p-5">
-            <h2 className="text-lg font-bold">{t("newCampaign.step4")}</h2>
+            <StepHeader n={4} title={t("newCampaign.step4")} state="current" />
             <label className="block space-y-1 text-sm">
               <span className="font-medium">{t("newCampaign.name")}</span>
               <input className={inputCls} value={name} onChange={(e) => setName(e.target.value)} />
@@ -331,5 +364,16 @@ export function NewCampaign({ ciiuOptions, camaras }: { ciiuOptions: CiiuOption[
         </p>
       )}
     </div>
+  );
+}
+
+function StepHeader({ n, title, state }: { n: number; title: string; state: "done" | "current" }) {
+  return (
+    <h2 className="flex items-center gap-3 text-lg font-bold">
+      <span aria-hidden className={`flex size-7 items-center justify-center rounded-full text-sm ${state === "done" ? "bg-ink text-chrome-ink" : "bg-brand text-brand-ink"}`}>
+        {state === "done" ? "✓" : n}
+      </span>
+      {title}
+    </h2>
   );
 }

@@ -21,6 +21,37 @@ export interface BridgeData {
   recommendation: Recommendation;
   activity: { id: string; kind: "working" | "waiting" | "attention" | "done"; messageKey: string; params: unknown; createdAt: Date }[];
   nextAction: NextAction;
+  progress: CampaignProgress;
+}
+
+export type StepKey = "leads" | "wave" | "review" | "send" | "results" | "decide";
+export const STEPS: StepKey[] = ["leads", "wave", "review", "send", "results", "decide"];
+
+export interface CampaignProgress {
+  current: StepKey;
+  /** Cuándo maduran los primeros resultados (contacto + maduración), si ya hubo contactos. */
+  firstMatureAt: Date | null;
+}
+
+/** En qué fase va la campaña, para el indicador de progreso del puente de mando. */
+export function campaignProgress(input: {
+  found: number;
+  waves: { n: number; status: string }[];
+  contactedAt: Date[];
+  matureContacts: number;
+  maturationHours: number;
+}): CampaignProgress {
+  const first = input.contactedAt.length ? new Date(Math.min(...input.contactedAt.map((d) => d.getTime()))) : null;
+  const firstMatureAt = first ? new Date(first.getTime() + input.maturationHours * 3_600_000) : null;
+  const has = (...st: string[]) => input.waves.some((w) => st.includes(w.status));
+  let current: StepKey;
+  if (input.found === 0) current = "leads";
+  else if (input.matureContacts > 0) current = "decide";
+  else if (input.contactedAt.length > 0) current = "results";
+  else if (has("approved", "sending")) current = "send";
+  else if (has("review")) current = "review";
+  else current = "wave";
+  return { current, firstMatureAt };
 }
 
 /** El paso que sigue en el embudo de la campaña, para la tarjeta "Acción pendiente". */
@@ -120,7 +151,16 @@ export async function loadBridge(campaignId?: string, view: CostView = "variable
     waveSize,
   });
 
+  const progress = campaignProgress({
+    found: rows.length,
+    waves,
+    contactedAt: rows.map((r) => r.contactedAt).filter((d): d is Date => Boolean(d)),
+    matureContacts: ts.matureContactsTotal,
+    maturationHours: thresholds.maturationHours,
+  });
+
   return {
+    progress,
     campaign: { id: campaign.id, name: campaign.name, paused: campaign.paused, fxCopPerUsd: campaign.fxCopPerUsd },
     metrics,
     thompson: ts,

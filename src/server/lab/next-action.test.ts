@@ -21,3 +21,19 @@ describe("decideNextAction", () => {
     expect(decideNextAction({ ...base, waves: [{ n: 1, status: "sent" }], inProfileUnassigned: 0 })).toEqual({ kind: "none" });
   });
 });
+
+import { campaignProgress } from "./bridge";
+
+describe("campaignProgress", () => {
+  const base = { found: 51, waves: [] as { n: number; status: string }[], contactedAt: [] as Date[], matureContacts: 0, maturationHours: 3 };
+  it("avanza por las fases de la campaña", () => {
+    expect(campaignProgress({ ...base, found: 0 }).current).toBe("leads");
+    expect(campaignProgress(base).current).toBe("wave");
+    expect(campaignProgress({ ...base, waves: [{ n: 1, status: "review" }] }).current).toBe("review");
+    expect(campaignProgress({ ...base, waves: [{ n: 1, status: "approved" }] }).current).toBe("send");
+    const c = new Date("2026-10-17T13:00:00Z");
+    const waiting = campaignProgress({ ...base, waves: [{ n: 1, status: "sent" }], contactedAt: [c] });
+    expect(waiting).toEqual({ current: "results", firstMatureAt: new Date("2026-10-17T16:00:00Z") });
+    expect(campaignProgress({ ...base, contactedAt: [c], matureContacts: 10 }).current).toBe("decide");
+  });
+});
