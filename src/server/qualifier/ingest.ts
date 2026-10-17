@@ -21,19 +21,24 @@ export async function ingestCallResult(r: QualifierResult, rawId: string): Promi
     let ambiguousReason: string | null = null;
 
     if (!attempt && r.toNumber && r.startedAt) {
-      const candidates = await tx
+      const inWindow = and(
+        eq(schema.contactAttempt.provider, "dapta"),
+        gte(schema.contactAttempt.createdAt, new Date(r.startedAt.getTime() - MATCH_WINDOW_MS)),
+        lte(schema.contactAttempt.createdAt, r.startedAt),
+      );
+      // Llamada directa: el número es el del lead. "Llámenme ahora": el que dio el titular (consent).
+      const byLeadPhone = await tx
         .select({ attempt: schema.contactAttempt })
         .from(schema.contactAttempt)
         .innerJoin(schema.lead, eq(schema.lead.id, schema.contactAttempt.leadId))
-        .where(
-          and(
-            eq(schema.contactAttempt.provider, "dapta"),
-            eq(schema.lead.phoneE164, r.toNumber),
-            gte(schema.contactAttempt.createdAt, new Date(r.startedAt.getTime() - MATCH_WINDOW_MS)),
-            lte(schema.contactAttempt.createdAt, r.startedAt),
-          ),
-        )
+        .where(and(inWindow, eq(schema.lead.phoneE164, r.toNumber)))
         .orderBy(desc(schema.contactAttempt.createdAt));
+      const byConsentPhone = await tx
+        .selectDistinct({ attempt: schema.contactAttempt })
+        .from(schema.contactAttempt)
+        .innerJoin(schema.consent, eq(schema.consent.leadId, schema.contactAttempt.leadId))
+        .where(and(inWindow, eq(schema.contactAttempt.requestedByHolder, true), eq(schema.consent.phoneE164, r.toNumber)));
+      const candidates = [...new Map([...byLeadPhone, ...byConsentPhone].map((c) => [c.attempt.id, c])).values()];
       if (candidates.length === 1) attempt = candidates[0].attempt;
       else ambiguousReason = candidates.length ? `${candidates.length} intentos posibles para ${r.toNumber}` : "sin intento que coincida";
     } else if (!attempt) {

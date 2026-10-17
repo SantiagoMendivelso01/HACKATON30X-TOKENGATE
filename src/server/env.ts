@@ -23,6 +23,8 @@ const schema = z.object({
   DAPTA_FLOW_B_ENQUEUE_URL: z.string().optional(),
   DAPTA_WEBHOOK_SECRET: z.string().optional(),
   DAPTA_WEBHOOK_IPS: list,
+  /** Número de WhatsApp del remitente para el enlace wa.me (solo lo inicia el lead). */
+  WHATSAPP_NUMBER: z.string().optional(),
 });
 
 export type Env = z.infer<typeof schema>;
